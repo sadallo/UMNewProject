@@ -12,7 +12,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
     {
         public List<Category> selectAllCategory()
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -26,7 +26,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Category selectCategoryById(Category obj)
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -42,7 +42,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean insertCategory(Category obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -60,7 +60,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean updateCategory(Category obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -100,7 +100,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean deleteCategory(Category obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {

@@ -12,7 +12,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
     {
         public List<Ranking> selectAllRanking()
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -26,7 +26,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Ranking selectRankingById(Ranking obj)
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -42,7 +42,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean insertRanking(Ranking obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -60,7 +60,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean updateRanking(Ranking obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -99,7 +99,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean deleteRanking(Ranking obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {

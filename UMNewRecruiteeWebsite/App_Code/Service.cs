@@ -181,34 +181,39 @@ public class Service : IServiceWCF
         {
             dto.RankingId = null;
         }
-        Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue);
+        Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue, dto.Email,
+                           dto.FirstName, dto.LastName, dto.Gender, dto.AgeId, dto.EducationId, dto.IncomeId); 
         RecruiteeManager mgr = new RecruiteeManager();
         return mgr.insertRecruitee(obj);
     }
 
     public Boolean updateRecruitee(RecruiteeDto dto)
     {
-        Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue);
+        Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue, dto.Email,
+                           dto.FirstName, dto.LastName, dto.Gender, dto.AgeId, dto.EducationId, dto.IncomeId); 
         RecruiteeManager mgr = new RecruiteeManager();
         return mgr.updateRecruitee(obj);
     }
 
     public Boolean deleteRecruitee(RecruiteeDto dto)
     {
-        Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue);
+        Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue, dto.Email,
+                           dto.FirstName, dto.LastName, dto.Gender, dto.AgeId, dto.EducationId, dto.IncomeId); 
         RecruiteeManager mgr = new RecruiteeManager();
         return mgr.deleteRecruitee(obj);
     }
 
-    public RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue)
+    public RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
-        return RecruiteeDto.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue);
+        return RecruiteeDto.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email,
+                   FirstName, LastName, Gender, AgeId, EducationId, IncomeId);
     }
 
     public Boolean addSkillToRecruitee(System.Guid RecruiteeId, String SkillId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
-        Recruitee rec = Recruitee.createRecruitee(RecruiteeId, null, 0);
+        Recruitee rec = Recruitee.createRecruitee(RecruiteeId, null, 0, "", "", "", "", "", "", "");
         Recruitee obj = mgr.selectRecruiteeById(rec);
         return mgr.addSkillToRecruitee(obj, SkillId);
     }
@@ -216,7 +221,7 @@ public class Service : IServiceWCF
     public Boolean removeSkillFromRecruitee(System.Guid RecruiteeId, String SkillId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
-        Recruitee rec = Recruitee.createRecruitee(RecruiteeId, null, 0);
+        Recruitee rec = Recruitee.createRecruitee(RecruiteeId, null, 0, "", "", "", "", "", "", "");
         Recruitee obj = mgr.selectRecruiteeById(rec);
         return mgr.removeSkillFromRecruitee(obj, SkillId);
     }

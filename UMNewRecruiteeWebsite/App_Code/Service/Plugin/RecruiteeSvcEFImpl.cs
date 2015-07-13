@@ -14,7 +14,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
     {
         public List<Recruitee> selectAllRecruitee()
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -28,7 +28,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Recruitee selectRecruiteeById(Recruitee obj)
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -44,7 +44,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public List<Recruitee> selectRecruiteeBySkillId(String skillId)
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -59,7 +59,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean insertRecruitee(Recruitee obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -77,7 +77,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean updateRecruitee(Recruitee obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -119,7 +119,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
         public Boolean deleteRecruitee(Recruitee obj)
         {
 
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -157,7 +157,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean addSkillToRecruitee(Recruitee obj, String skillId)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -198,7 +198,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean removeSkillFromRecruitee(Recruitee obj, String skillId)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {

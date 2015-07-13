@@ -12,7 +12,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
     {
         public List<Skill> selectAllSkill()
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -26,7 +26,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Skill selectSkillById(Skill obj)
         {
-            RecruiteeBankContext db = new RecruiteeBankContext();
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
 
             try
             {
@@ -42,7 +42,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean insertSkill(Skill obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -60,7 +60,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean updateSkill(Skill obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {
@@ -99,7 +99,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         public Boolean deleteSkill(Skill obj)
         {
-            using (RecruiteeBankContext db = new RecruiteeBankContext())
+            using (NewRecruiteeBankContext db = new NewRecruiteeBankContext())
             {
                 try
                 {

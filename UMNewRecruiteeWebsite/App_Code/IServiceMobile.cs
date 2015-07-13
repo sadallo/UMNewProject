@@ -64,16 +64,20 @@ public interface IServiceMobile
     RecruiteeDto selectRecruiteeById(System.Guid RecruiteeId);
 
     [OperationContract]
-    Boolean insertRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    Boolean insertRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    Boolean updateRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    Boolean updateRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    Boolean deleteRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    Boolean deleteRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
     Boolean addSkillToRecruitee(System.Guid RecruiteeId, String SkillId);
