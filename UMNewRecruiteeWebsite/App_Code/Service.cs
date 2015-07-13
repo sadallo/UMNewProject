@@ -14,7 +14,7 @@ using UMNewRecruiteeWebsite.Models;
 public class Service : IServiceWCF
 {
     #region Category
- 
+
     public List<CategoryDto> selectAllCategory()
     {
         CategoryManager mgr = new CategoryManager();
@@ -284,5 +284,170 @@ public class Service : IServiceWCF
     
     #endregion
 
-   
+    #region Age
+
+    public List<AgeDto> selectAllAge()
+    {
+        AgeManager mgr = new AgeManager();
+        List<Age> catList = mgr.selectAllAge();
+        List<AgeDto> dtoList = new List<AgeDto>();
+
+        foreach (Age cat in catList)
+        {
+            dtoList.Add(AgeDto.createAgeDTO(cat));
+        }
+
+        return dtoList;
+    }
+
+    public AgeDto selectAgeById(AgeDto dto)
+    {
+        AgeManager mgr = new AgeManager();
+        Age obj = new Age();
+        obj.AgeId = dto.AgeId;
+        obj = mgr.selectAgeById(obj);
+        if (obj != null)
+        {
+            return AgeDto.createAgeDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertAge(AgeDto dto)
+    {
+        Age obj = Age.createAge(dto.AgeId, dto.AgeDescription);
+        AgeManager mgr = new AgeManager();
+        return mgr.insertAge(obj);
+    }
+
+    public Boolean updateAge(AgeDto dto)
+    {
+        Age obj = Age.createAge(dto.AgeId, dto.AgeDescription);
+        AgeManager mgr = new AgeManager();
+        return mgr.updateAge(obj);
+    }
+
+    public Boolean deleteAge(AgeDto dto)
+    {
+        Age obj = Age.createAge(dto.AgeId, dto.AgeDescription);
+        AgeManager mgr = new AgeManager();
+        return mgr.deleteAge(obj);
+    }
+
+    #endregion
+
+    #region Education
+
+    public List<EducationDto> selectAllEducation()
+    {
+        EducationManager mgr = new EducationManager();
+        List<Education> catList = mgr.selectAllEducation();
+        List<EducationDto> dtoList = new List<EducationDto>();
+
+        foreach (Education cat in catList)
+        {
+            dtoList.Add(EducationDto.createEducationDTO(cat));
+        }
+
+        return dtoList;
+    }
+
+    public EducationDto selectEducationById(EducationDto dto)
+    {
+        EducationManager mgr = new EducationManager();
+        Education obj = new Education();
+        obj.EducationId = dto.EducationId;
+        obj = mgr.selectEducationById(obj);
+        if (obj != null)
+        {
+            return EducationDto.createEducationDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertEducation(EducationDto dto)
+    {
+        Education obj = Education.createEducation(dto.EducationId, dto.EducationDescription);
+        EducationManager mgr = new EducationManager();
+        return mgr.insertEducation(obj);
+    }
+
+    public Boolean updateEducation(EducationDto dto)
+    {
+        Education obj = Education.createEducation(dto.EducationId, dto.EducationDescription);
+        EducationManager mgr = new EducationManager();
+        return mgr.updateEducation(obj);
+    }
+
+    public Boolean deleteEducation(EducationDto dto)
+    {
+        Education obj = Education.createEducation(dto.EducationId, dto.EducationDescription);
+        EducationManager mgr = new EducationManager();
+        return mgr.deleteEducation(obj);
+    }
+
+    #endregion
+
+    #region Income
+
+    public List<IncomeDto> selectAllIncome()
+    {
+        IncomeManager mgr = new IncomeManager();
+        List<Income> catList = mgr.selectAllIncome();
+        List<IncomeDto> dtoList = new List<IncomeDto>();
+
+        foreach (Income cat in catList)
+        {
+            dtoList.Add(IncomeDto.createIncomeDTO(cat));
+        }
+
+        return dtoList;
+    }
+
+    public IncomeDto selectIncomeById(IncomeDto dto)
+    {
+        IncomeManager mgr = new IncomeManager();
+        Income obj = new Income();
+        obj.IncomeId = dto.IncomeId;
+        obj = mgr.selectIncomeById(obj);
+        if (obj != null)
+        {
+            return IncomeDto.createIncomeDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertIncome(IncomeDto dto)
+    {
+        Income obj = Income.createIncome(dto.IncomeId, dto.IncomeDescription);
+        IncomeManager mgr = new IncomeManager();
+        return mgr.insertIncome(obj);
+    }
+
+    public Boolean updateIncome(IncomeDto dto)
+    {
+        Income obj = Income.createIncome(dto.IncomeId, dto.IncomeDescription);
+        IncomeManager mgr = new IncomeManager();
+        return mgr.updateIncome(obj);
+    }
+
+    public Boolean deleteIncome(IncomeDto dto)
+    {
+        Income obj = Income.createIncome(dto.IncomeId, dto.IncomeDescription);
+        IncomeManager mgr = new IncomeManager();
+        return mgr.deleteIncome(obj);
+    }
+
+    #endregion
+
+
 }

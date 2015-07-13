@@ -105,5 +105,59 @@ public interface IServiceMobile
 
     #endregion
 
+    #region Age
+    [OperationContract]
+    List<AgeDto> selectAllAge();
+
+    [OperationContract]
+    AgeDto selectAgeById(String AgeId);
+
+    [OperationContract]
+    Boolean insertAge(String AgeId, String AgeDescription);
+
+    [OperationContract]
+    Boolean updateAge(String AgeId, String AgeDescription);
+
+    [OperationContract]
+    Boolean deleteAge(String AgeId, String AgeDescription);
+
+    #endregion
+
+    #region Education
+    [OperationContract]
+    List<EducationDto> selectAllEducation();
+
+    [OperationContract]
+    EducationDto selectEducationById(String EducationId);
+
+    [OperationContract]
+    Boolean insertEducation(String EducationId, String EducationDescription);
+
+    [OperationContract]
+    Boolean updateEducation(String EducationId, String EducationDescription);
+
+    [OperationContract]
+    Boolean deleteEducation(String EducationId, String EducationDescription);
+
+    #endregion
+
+    #region Income
+    [OperationContract]
+    List<IncomeDto> selectAllIncome();
+
+    [OperationContract]
+    IncomeDto selectIncomeById(String IncomeId);
+
+    [OperationContract]
+    Boolean insertIncome(String IncomeId, String IncomeDescription);
+
+    [OperationContract]
+    Boolean updateIncome(String IncomeId, String IncomeDescription);
+
+    [OperationContract]
+    Boolean deleteIncome(String IncomeId, String IncomeDescription);
+
+    #endregion
+
 
 }

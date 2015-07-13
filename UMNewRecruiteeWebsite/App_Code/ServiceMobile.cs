@@ -286,6 +286,174 @@ public class ServiceMobile : IServiceMobile
     }
 
     #endregion
+
+    #region Age
+
+    public List<AgeDto> selectAllAge()
+    {
+        AgeManager mgr = new AgeManager();
+        List<Age> AgeList = mgr.selectAllAge();
+        List<AgeDto> dtoList = new List<AgeDto>();
+
+        foreach (Age Age in AgeList)
+        {
+            dtoList.Add(AgeDto.createAgeDTO(Age));
+        }
+
+        return dtoList;
+    }
+
+    public AgeDto selectAgeById(String AgeId)
+    {
+        AgeManager mgr = new AgeManager();
+        Age obj = new Age();
+        obj.AgeId = AgeId;
+        obj = mgr.selectAgeById(obj);
+
+        if (obj != null)
+        {
+            return AgeDto.createAgeDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertAge(String AgeId, String AgeDescription)
+    {
+        Age obj = Age.createAge(AgeId, AgeDescription);
+        AgeManager mgr = new AgeManager();
+        return mgr.insertAge(obj);
+    }
+
+    public Boolean updateAge(String AgeId, String AgeDescription)
+    {
+        Age obj = Age.createAge(AgeId, AgeDescription);
+        AgeManager mgr = new AgeManager();
+        return mgr.updateAge(obj);
+    }
+
+    public Boolean deleteAge(String AgeId, String AgeDescription)
+    {
+        Age obj = Age.createAge(AgeId, AgeDescription);
+        AgeManager mgr = new AgeManager();
+        return mgr.deleteAge(obj);
+    }
+
+    #endregion
+
+    #region Education
+
+    public List<EducationDto> selectAllEducation()
+    {
+        EducationManager mgr = new EducationManager();
+        List<Education> EducationList = mgr.selectAllEducation();
+        List<EducationDto> dtoList = new List<EducationDto>();
+
+        foreach (Education Education in EducationList)
+        {
+            dtoList.Add(EducationDto.createEducationDTO(Education));
+        }
+
+        return dtoList;
+    }
+
+    public EducationDto selectEducationById(String EducationId)
+    {
+        EducationManager mgr = new EducationManager();
+        Education obj = new Education();
+        obj.EducationId = EducationId;
+        obj = mgr.selectEducationById(obj);
+
+        if (obj != null)
+        {
+            return EducationDto.createEducationDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertEducation(String EducationId, String EducationDescription)
+    {
+        Education obj = Education.createEducation(EducationId, EducationDescription);
+        EducationManager mgr = new EducationManager();
+        return mgr.insertEducation(obj);
+    }
+
+    public Boolean updateEducation(String EducationId, String EducationDescription)
+    {
+        Education obj = Education.createEducation(EducationId, EducationDescription);
+        EducationManager mgr = new EducationManager();
+        return mgr.updateEducation(obj);
+    }
+
+    public Boolean deleteEducation(String EducationId, String EducationDescription)
+    {
+        Education obj = Education.createEducation(EducationId, EducationDescription);
+        EducationManager mgr = new EducationManager();
+        return mgr.deleteEducation(obj);
+    }
+
+    #endregion
+
+    #region Income
+
+    public List<IncomeDto> selectAllIncome()
+    {
+        IncomeManager mgr = new IncomeManager();
+        List<Income> IncomeList = mgr.selectAllIncome();
+        List<IncomeDto> dtoList = new List<IncomeDto>();
+
+        foreach (Income Income in IncomeList)
+        {
+            dtoList.Add(IncomeDto.createIncomeDTO(Income));
+        }
+
+        return dtoList;
+    }
+
+    public IncomeDto selectIncomeById(String IncomeId)
+    {
+        IncomeManager mgr = new IncomeManager();
+        Income obj = new Income();
+        obj.IncomeId = IncomeId;
+        obj = mgr.selectIncomeById(obj);
+
+        if (obj != null)
+        {
+            return IncomeDto.createIncomeDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertIncome(String IncomeId, String IncomeDescription)
+    {
+        Income obj = Income.createIncome(IncomeId, IncomeDescription);
+        IncomeManager mgr = new IncomeManager();
+        return mgr.insertIncome(obj);
+    }
+
+    public Boolean updateIncome(String IncomeId, String IncomeDescription)
+    {
+        Income obj = Income.createIncome(IncomeId, IncomeDescription);
+        IncomeManager mgr = new IncomeManager();
+        return mgr.updateIncome(obj);
+    }
+
+    public Boolean deleteIncome(String IncomeId, String IncomeDescription)
+    {
+        Income obj = Income.createIncome(IncomeId, IncomeDescription);
+        IncomeManager mgr = new IncomeManager();
+        return mgr.deleteIncome(obj);
+    }
+
+    #endregion
    
 
 }

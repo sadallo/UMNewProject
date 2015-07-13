@@ -100,6 +100,60 @@ public interface IServiceWCF
 
     #endregion
 
+    #region Age
+    [OperationContract]
+    List<AgeDto> selectAllAge();
+
+    [OperationContract]
+    AgeDto selectAgeById(AgeDto obj);
+
+    [OperationContract]
+    Boolean insertAge(AgeDto obj);
+
+    [OperationContract]
+    Boolean updateAge(AgeDto obj);
+
+    [OperationContract]
+    Boolean deleteAge(AgeDto obj);
+
+    #endregion
+
+    #region Education
+    [OperationContract]
+    List<EducationDto> selectAllEducation();
+
+    [OperationContract]
+    EducationDto selectEducationById(EducationDto obj);
+
+    [OperationContract]
+    Boolean insertEducation(EducationDto obj);
+
+    [OperationContract]
+    Boolean updateEducation(EducationDto obj);
+
+    [OperationContract]
+    Boolean deleteEducation(EducationDto obj);
+
+    #endregion
+
+    #region Income
+    [OperationContract]
+    List<IncomeDto> selectAllIncome();
+
+    [OperationContract]
+    IncomeDto selectIncomeById(IncomeDto obj);
+
+    [OperationContract]
+    Boolean insertIncome(IncomeDto obj);
+
+    [OperationContract]
+    Boolean updateIncome(IncomeDto obj);
+
+    [OperationContract]
+    Boolean deleteIncome(IncomeDto obj);
+
+    #endregion
+
 
 
 
