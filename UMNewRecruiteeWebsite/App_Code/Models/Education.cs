@@ -13,5 +13,13 @@ namespace UMNewRecruiteeWebsite.Models
         public string EducationId { get; set; }
         public string EducationDescription { get; set; }
         public virtual ICollection<Recruitee> Recruitees { get; set; }
+
+        public static Education createEducation(String EducationId, String EducationDescription)
+        {
+            Education obj = new Education();
+            obj.EducationId = EducationId;
+            obj.EducationDescription = EducationDescription;
+            return obj;
+        }
     }
 }
