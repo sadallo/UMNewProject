@@ -289,12 +289,12 @@ public class Service : IServiceWCF
     public List<AgeDto> selectAllAge()
     {
         AgeManager mgr = new AgeManager();
-        List<Age> catList = mgr.selectAllAge();
+        List<Age> ageList = mgr.selectAllAge();
         List<AgeDto> dtoList = new List<AgeDto>();
 
-        foreach (Age cat in catList)
+        foreach (Age age in ageList)
         {
-            dtoList.Add(AgeDto.createAgeDTO(cat));
+            dtoList.Add(AgeDto.createAgeDTO(age));
         }
 
         return dtoList;
@@ -344,12 +344,12 @@ public class Service : IServiceWCF
     public List<EducationDto> selectAllEducation()
     {
         EducationManager mgr = new EducationManager();
-        List<Education> catList = mgr.selectAllEducation();
+        List<Education> eduList = mgr.selectAllEducation();
         List<EducationDto> dtoList = new List<EducationDto>();
 
-        foreach (Education cat in catList)
+        foreach (Education edu in eduList)
         {
-            dtoList.Add(EducationDto.createEducationDTO(cat));
+            dtoList.Add(EducationDto.createEducationDTO(edu));
         }
 
         return dtoList;
@@ -399,12 +399,12 @@ public class Service : IServiceWCF
     public List<IncomeDto> selectAllIncome()
     {
         IncomeManager mgr = new IncomeManager();
-        List<Income> catList = mgr.selectAllIncome();
+        List<Income> incList = mgr.selectAllIncome();
         List<IncomeDto> dtoList = new List<IncomeDto>();
 
-        foreach (Income cat in catList)
+        foreach (Income inc in incList)
         {
-            dtoList.Add(IncomeDto.createIncomeDTO(cat));
+            dtoList.Add(IncomeDto.createIncomeDTO(inc));
         }
 
         return dtoList;
