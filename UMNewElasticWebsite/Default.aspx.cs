@@ -17,8 +17,6 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        ServiceMobile svc = new ServiceMobile();
-        List<RecommendedJobDto> list_rec_job = svc.selectAllRecommendedJob();
 
     }
 

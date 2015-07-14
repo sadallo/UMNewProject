@@ -4,7 +4,7 @@ using UMNewRecruiteeWebsite.Models.Mapping;
 
 namespace UMNewRecruiteeWebsite.Models
 {
-    public partial class NewRecruiteeBankContext : DbContext
+    public class NewRecruiteeBankContext : DbContext
     {
         static NewRecruiteeBankContext()
         {
@@ -35,6 +35,9 @@ namespace UMNewRecruiteeWebsite.Models
             modelBuilder.Configurations.Add(new RecruiteeMap());
             modelBuilder.Configurations.Add(new SkillMap());
             modelBuilder.Configurations.Add(new sysdiagramMap());
+
+            // Fixes Sql precision problem  TABLE: Recruitee COLUMN: RankingValue
+            modelBuilder.Entity<Recruitee>().Property(x => x.RankingValue).HasPrecision(18, 14);
         }
     }
 }

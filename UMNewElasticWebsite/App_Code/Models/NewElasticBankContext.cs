@@ -4,7 +4,7 @@ using UMNewElasticWebsite.Models.Mapping;
 
 namespace UMNewElasticWebsite.Models
 {
-    public partial class NewElasticBankContext : DbContext
+    public class NewElasticBankContext : DbContext
     {
         static NewElasticBankContext()
         {
@@ -25,6 +25,9 @@ namespace UMNewElasticWebsite.Models
             modelBuilder.Configurations.Add(new RecommendedJobMap());
             modelBuilder.Configurations.Add(new sysdiagramMap());
             modelBuilder.Configurations.Add(new TaskMap());
+
+            // Fixes Sql precision problem  TABLE: Recruitee COLUMN: RankingValue
+            modelBuilder.Entity<RecommendedJob>().Property(x => x.PredictedRankingValue).HasPrecision(18, 14);
         }
     }
 }
