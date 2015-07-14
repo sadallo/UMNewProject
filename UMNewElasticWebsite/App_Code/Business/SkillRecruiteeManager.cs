@@ -78,7 +78,7 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        //public SkillDto createSkillRecruiteeDTO(System.Guid SkillId, String SkillId)
+        //public SkillDto createSkillRecruiteeDTO(Guid SkillId, String SkillId)
         //{
         //    try
         //    {

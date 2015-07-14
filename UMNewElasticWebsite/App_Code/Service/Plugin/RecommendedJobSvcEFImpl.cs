@@ -7,15 +7,15 @@ using UMNewElasticWebsite.Service.Interface;
 
 namespace UMNewElasticWebsite.Service.Plugin
 {
-    public class TaskSvcEFImpl : ITaskSvc
+    public class RecommendedJobSvcEFImpl : IRecommendedJobSvc
     {
-        public List<Task> selectAllTask()
+        public List<RecommendedJob> selectAllRecommendedJob()
         {
             NewElasticBankContext db = new NewElasticBankContext();
 
             try
             {
-                return db.Database.SqlQuery(typeof(Task), "dbo.SelectAllTask").Cast<Task>().ToList();
+                return db.Database.SqlQuery(typeof(RecommendedJob), "dbo.SelectAllRecommendedJob").Cast<RecommendedJob>().ToList();
             }
             catch (Exception ex)
             {
@@ -23,14 +23,14 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public Task selectTaskById(Task obj)
+        public RecommendedJob selectRecommendedJobByIdAndRecruiteeId(RecommendedJob obj)
         {
             NewElasticBankContext db = new NewElasticBankContext();
 
             try
             {
 
-                return db.Tasks.SqlQuery("dbo.SelectTaskById @TaskId='" + obj.TaskId.ToString() + "'").Single();
+                return db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
             }
             catch (Exception ex)
             {
@@ -38,13 +38,13 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public Boolean insertTask(Task obj)
+        public Boolean insertRecommendedJob(RecommendedJob obj)
         {
             using (NewElasticBankContext db = new NewElasticBankContext())
             {
                 try
                 {
-                    db.Tasks.Add(obj);
+                    db.RecommendedJobs.Add(obj);
                     db.SaveChanges();
                     return true;
                 }
@@ -56,20 +56,18 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public Boolean updateTask(Task obj)
+        public Boolean updateRecommendedJob(RecommendedJob obj)
         {
             using (NewElasticBankContext db = new NewElasticBankContext())
             {
                 try
                 {
 
-                    Task task = db.Tasks.SqlQuery("dbo.SelectTaskById @TaskId='" + obj.TaskId.ToString() + "'").Single();
+                    RecommendedJob rec_job = db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
 
-                    if (task != null)
+                    if (rec_job != null)
                     {
-                        task.JobId = obj.JobId;
-                        task.RecruiteeId = obj.RecruiteeId;
-                        task.TaskDescription = obj.TaskDescription;
+                        rec_job.PredictedRankingValue = obj.PredictedRankingValue;
 
                         #region Database Submission with Rollback
 
@@ -97,17 +95,17 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public Boolean deleteTask(Task obj)
+        public Boolean deleteRecommendedJob(RecommendedJob obj)
         {
             using (NewElasticBankContext db = new NewElasticBankContext())
             {
                 try
                 {
-                    Task task = db.Tasks.SqlQuery("dbo.SelectTaskById @TaskId='" + obj.TaskId.ToString() + "'").Single();
+                    RecommendedJob rec_job = db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
 
-                    if (task != null)
+                    if (rec_job != null)
                     {
-                        db.Tasks.Remove(task);
+                        db.RecommendedJobs.Remove(rec_job);
                         #region Database Submission
 
                         try

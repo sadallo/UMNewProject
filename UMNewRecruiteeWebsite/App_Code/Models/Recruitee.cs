@@ -11,7 +11,7 @@ namespace UMNewRecruiteeWebsite.Models
             this.Skills = new List<Skill>();
         }
 
-        public System.Guid RecruiteeId { get; set; }
+        public Guid RecruiteeId { get; set; }
         public string RankingId { get; set; }
         public decimal RankingValue { get; set; }
         public string Email { get; set; }
@@ -28,7 +28,7 @@ namespace UMNewRecruiteeWebsite.Models
         public virtual ICollection<Category> Categories { get; set; }
         public virtual ICollection<Skill> Skills { get; set; }
 
-        public static Recruitee createRecruitee(System.Guid RecruiteeId, String RankingId, decimal RankingValue, String Email,
+        public static Recruitee createRecruitee(Guid RecruiteeId, String RankingId, decimal RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
         {
             Recruitee obj = new Recruitee();

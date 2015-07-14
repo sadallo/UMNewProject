@@ -203,14 +203,14 @@ public class Service : IServiceWCF
         return mgr.deleteRecruitee(obj);
     }
 
-    public RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+    public RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
         return RecruiteeDto.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email,
                    FirstName, LastName, Gender, AgeId, EducationId, IncomeId);
     }
 
-    public Boolean addSkillToRecruitee(System.Guid RecruiteeId, String SkillId)
+    public Boolean addSkillToRecruitee(Guid RecruiteeId, String SkillId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
         Recruitee rec = Recruitee.createRecruitee(RecruiteeId, null, 0, "", "", "", "", "", "", "");
@@ -218,7 +218,7 @@ public class Service : IServiceWCF
         return mgr.addSkillToRecruitee(obj, SkillId);
     }
 
-    public Boolean removeSkillFromRecruitee(System.Guid RecruiteeId, String SkillId)
+    public Boolean removeSkillFromRecruitee(Guid RecruiteeId, String SkillId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
         Recruitee rec = Recruitee.createRecruitee(RecruiteeId, null, 0, "", "", "", "", "", "", "");

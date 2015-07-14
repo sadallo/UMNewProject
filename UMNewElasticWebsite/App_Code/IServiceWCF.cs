@@ -31,6 +31,23 @@ public interface IServiceWCF
  
     #endregion
 
+    #region RecommendedJob
+    [OperationContract]
+    List<RecommendedJobDto> selectAllRecommendedJob();
+
+    [OperationContract]
+    RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(RecommendedJobDto obj);
+
+    [OperationContract]
+    Boolean insertRecommendedJob(RecommendedJobDto obj);
+
+    [OperationContract]
+    Boolean updateRecommendedJob(RecommendedJobDto obj);
+
+    [OperationContract]
+    Boolean deleteRecommendedJob(RecommendedJobDto obj);
+    #endregion
+
     #region Recruitee
 
     [OperationContract]
@@ -49,7 +66,8 @@ public interface IServiceWCF
     Boolean deleteRecruitee(RecruiteeDto obj);
 
     [OperationContract]
-    RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
     
     [OperationContract]
     List<RecruiteeDto> selectRecruiteeBySkillId(String SkillId);
@@ -81,7 +99,7 @@ public interface IServiceWCF
     Boolean deleteJob(JobDto obj);
 
     [OperationContract]
-    JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+    JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                     String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
 
     [OperationContract]
@@ -134,6 +152,36 @@ public interface IServiceWCF
 
     [OperationContract]
     RankingDto createRankingDTO(String RankingId, String RankingName);
+
+    #endregion
+
+    #region Age
+
+    [OperationContract]
+    List<NewRecruiteeService.AgeDto> selectAllAge();
+
+    [OperationContract]
+    NewRecruiteeService.AgeDto selectAgeById(NewRecruiteeService.AgeDto obj);
+
+    #endregion
+
+    #region Education
+
+    [OperationContract]
+    List<NewRecruiteeService.EducationDto> selectAllEducation();
+
+    [OperationContract]
+    NewRecruiteeService.EducationDto selectEducationById(NewRecruiteeService.EducationDto obj);
+
+    #endregion
+
+    #region Income
+
+    [OperationContract]
+    List<NewRecruiteeService.IncomeDto> selectAllIncome();
+
+    [OperationContract]
+    NewRecruiteeService.IncomeDto selectIncomeById(NewRecruiteeService.IncomeDto obj);
 
     #endregion
 

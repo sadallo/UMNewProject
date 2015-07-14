@@ -102,7 +102,7 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        //public SkillDto createSkillDTO(System.Guid SkillId, String RankingId)
+        //public SkillDto createSkillDTO(Guid SkillId, String RankingId)
         //{
         //    using (NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient())
         //    {

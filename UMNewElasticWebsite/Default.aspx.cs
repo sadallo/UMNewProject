@@ -8,6 +8,7 @@ using UMNewElasticWebsite.Business;
 using UMNewElasticWebsite.Models;
 using UMNewElasticWebsite.Service.Plugin;
 using UMNewElasticWebsite.Service.Interface;
+using UMNewElasticWebsite.DomainDTO;
 using NewRecruiteeService;
 using NewJobService;
 using System.IO;
@@ -16,7 +17,15 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        ServiceMobile svc = new ServiceMobile();
+        List<RecommendedJobDto> list_rec_job = svc.selectAllRecommendedJob();
+
     }
+
+
+
+
+
 
     public void updateRankingValues()
     {

@@ -17,16 +17,33 @@ public interface IServiceMobile
     List<TaskDto> selectAllTask();
 
     [OperationContract]
-    TaskDto selectTaskById(System.Guid TaskId);
+    TaskDto selectTaskById(Guid TaskId);
 
     [OperationContract]
-    Boolean insertTask(System.Guid TaskId, System.Guid JobId, System.Guid RecruiteeId, String TaskDescription);
+    Boolean insertTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription);
 
     [OperationContract]
-    Boolean updateTask(System.Guid TaskId, System.Guid JobId, System.Guid RecruiteeId, String TaskDescription);
+    Boolean updateTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription);
 
     [OperationContract]
-    Boolean deleteTask(System.Guid TaskId, System.Guid JobId, System.Guid RecruiteeId, String TaskDescription);
+    Boolean deleteTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription);
+    #endregion
+
+    #region RecommendedJob
+    [OperationContract]
+    List<RecommendedJobDto> selectAllRecommendedJob();
+
+    [OperationContract]
+    RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(Guid JobId, Guid RecruiteeId);
+
+    [OperationContract]
+    Boolean insertRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue);
+
+    [OperationContract]
+    Boolean updateRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue);
+
+    [OperationContract]
+    Boolean deleteRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue);
     #endregion
 
     #region Recruitee
@@ -34,19 +51,23 @@ public interface IServiceMobile
     List<RecruiteeDto> selectAllRecruitee();
     
     [OperationContract]
-    RecruiteeDto selectRecruiteeById(System.Guid RecruiteeId);
+    RecruiteeDto selectRecruiteeById(Guid RecruiteeId);
 
     [OperationContract]
-    Boolean insertRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    Boolean insertRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    Boolean updateRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    Boolean updateRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    Boolean deleteRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    Boolean deleteRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue);
+    RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
     List<RecruiteeDto> selectRecruiteeBySkillId(String SkillId);
@@ -64,22 +85,22 @@ public interface IServiceMobile
     List<JobDto> selectAllJob();
 
     [OperationContract]
-     JobDto selectJobById(System.Guid JobId);
+     JobDto selectJobById(Guid JobId);
 
     [OperationContract]
-     Boolean insertJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+     Boolean insertJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                        String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
 
     [OperationContract]
-     Boolean updateJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+     Boolean updateJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                        String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
 
     [OperationContract]
-     Boolean deleteJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+     Boolean deleteJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                        String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
 
     [OperationContract]
-     JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+     JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                        String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
 
     [OperationContract]
@@ -134,6 +155,35 @@ public interface IServiceMobile
     RankingDto createRankingDTO(String RankingId, String RankingName);
     #endregion
 
+    #region Age
+
+    [OperationContract]
+    List<NewRecruiteeService.AgeDto> selectAllAge();
+
+    [OperationContract]
+    NewRecruiteeService.AgeDto selectAgeById(String AgeId);
+
+    #endregion
+
+    #region Education
+
+    [OperationContract]
+    List<NewRecruiteeService.EducationDto> selectAllEducation();
+
+    [OperationContract]
+    NewRecruiteeService.EducationDto selectEducationById(String EducationId);
+
+    #endregion
+
+    #region Income
+
+    [OperationContract]
+    List<NewRecruiteeService.IncomeDto> selectAllIncome();
+
+    [OperationContract]
+    NewRecruiteeService.IncomeDto selectIncomeById(String IncomeId);
+
+    #endregion
 
 }
 

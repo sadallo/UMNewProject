@@ -9,7 +9,7 @@ namespace UMNewRecruiteeWebsite.DomainDTO
     public class RecruiteeDto
     {
         [DataMember]
-        public System.Guid RecruiteeId { get; set; }
+        public Guid RecruiteeId { get; set; }
 
         [DataMember]
         public string RankingId { get; set; }
@@ -54,7 +54,7 @@ namespace UMNewRecruiteeWebsite.DomainDTO
             return rec;
         }
 
-        public static RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+        public static RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
         {
             RecruiteeDto rec = new RecruiteeDto();

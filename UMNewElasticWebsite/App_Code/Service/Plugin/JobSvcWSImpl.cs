@@ -101,7 +101,7 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+        public JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                                     String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
         {
             using(NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient())

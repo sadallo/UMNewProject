@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using UMNewElasticWebsite.Service.Interface;
 using UMNewElasticWebsite.Exceptions.Service;
-using NewJobService;
+using NewRecruiteeService;
 
 namespace UMNewElasticWebsite.Business
 {
-    public class SkillJobManager : BusinessManager
+    public class IncomeManager : BusinessManager
     {
 
-        public List<SkillDto> selectAllSkillJob()
+        public List<IncomeDto> selectAllIncome()
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.selectAllSkillJob();
+                IIncomeSvc svc = (IIncomeSvc)this.getService(typeof(IIncomeSvc).Name);
+                return svc.selectAllIncome();
             }
             catch (ServiceLoadException ex)
             {
@@ -24,12 +24,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public SkillDto selectSkillById(SkillDto obj)
+        public IncomeDto selectIncomeById(IncomeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.selectSkillById(obj);
+                IIncomeSvc svc = (IIncomeSvc)this.getService(typeof(IIncomeSvc).Name);
+                return svc.selectIncomeById(obj);
             }
             catch (ServiceLoadException ex)
             {
@@ -37,12 +37,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public Boolean insertSkill(SkillDto obj)
+        public Boolean insertIncome(IncomeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.insertSkill(obj);
+                IIncomeSvc svc = (IIncomeSvc)this.getService(typeof(IIncomeSvc).Name);
+                return svc.insertIncome(obj);
 
             }
             catch (ServiceLoadException ex)
@@ -51,12 +51,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public Boolean updateSkill(SkillDto obj)
+        public Boolean updateIncome(IncomeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.updateSkill(obj);
+                IIncomeSvc svc = (IIncomeSvc)this.getService(typeof(IIncomeSvc).Name);
+                return svc.updateIncome(obj);
 
             }
             catch (ServiceLoadException ex)
@@ -65,12 +65,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public Boolean deleteSkill(SkillDto obj)
+        public Boolean deleteIncome(IncomeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.deleteSkill(obj);
+                IIncomeSvc svc = (IIncomeSvc)this.getService(typeof(IIncomeSvc).Name);
+                return svc.deleteIncome(obj);
             }
             catch (ServiceLoadException ex)
             {
@@ -78,20 +78,18 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        //public SkillDto createSkillDTO(Guid SkillId, String RankingId)
+        //public IncomeDto createIncomeDTO(Guid IncomeId, String IncomeId)
         //{
         //    try
         //    {
-        //        ISkillSvc svc = (ISkillSvc)this.getService(typeof(ISkillSvc).Name);
-        //        return svc.createSkillDTO(SkillId, RankingId); 
+        //        IIncomeSvc svc = (IIncomeSvc)this.getService(typeof(IIncomeSvc).Name);
+        //        return svc.createIncomeDTO(IncomeId, IncomeId);
         //    }
         //    catch (ServiceLoadException ex)
         //    {
         //        return null;
         //    }
         //}
-
-
     }
        
 }

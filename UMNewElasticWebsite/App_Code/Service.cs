@@ -69,6 +69,61 @@ public class Service : IServiceWCF
     }
     #endregion
 
+    #region RecommendedJob
+
+    public List<RecommendedJobDto> selectAllRecommendedJob()
+    {
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        List<RecommendedJob> taskList = mgr.selectAllRecommendedJob();
+        List<RecommendedJobDto> dtoList = new List<RecommendedJobDto>();
+
+        foreach (RecommendedJob task in taskList)
+        {
+            dtoList.Add(RecommendedJobDto.createRecommendedJobDTO(task));
+        }
+
+        return dtoList;
+    }
+
+    public RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(RecommendedJobDto dto)
+    {
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        RecommendedJob obj = new RecommendedJob();
+        obj.JobId = dto.JobId;
+        obj.RecruiteeId = dto.RecruiteeId;
+        obj = mgr.selectRecommendedJobByIdAndRecruiteeId(obj);
+        if (obj != null)
+        {
+            return RecommendedJobDto.createRecommendedJobDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertRecommendedJob(RecommendedJobDto dto)
+    {
+        RecommendedJob obj = RecommendedJob.createRecommendedJob(dto.JobId, dto.RecruiteeId, (decimal)dto.PredictedRankingValue);
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        return mgr.insertRecommendedJob(obj);
+    }
+
+    public Boolean updateRecommendedJob(RecommendedJobDto dto)
+    {
+        RecommendedJob obj = RecommendedJob.createRecommendedJob(dto.JobId, dto.RecruiteeId, (decimal)dto.PredictedRankingValue);
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        return mgr.updateRecommendedJob(obj);
+    }
+
+    public Boolean deleteRecommendedJob(RecommendedJobDto dto)
+    {
+        RecommendedJob obj = RecommendedJob.createRecommendedJob(dto.JobId, dto.RecruiteeId, (decimal)dto.PredictedRankingValue);
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        return mgr.deleteRecommendedJob(obj);
+    }
+    #endregion
+
     #region Recruitee
 
     public List<RecruiteeDto> selectAllRecruitee()
@@ -101,10 +156,12 @@ public class Service : IServiceWCF
         return mgr.deleteRecruitee(dto);
     }
 
-    public RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue)
+    public RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
-        return mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue);
+        return mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email, FirstName, LastName, Gender, 
+            AgeId, EducationId, IncomeId);
     }
 
     public List<RecruiteeDto> selectRecruiteeBySkillId(String SkillId)
@@ -163,7 +220,7 @@ public class Service : IServiceWCF
         return mgr.deleteJob(dto);
     }
 
-    public JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+    public JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                             String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
     {
         JobManager mgr = new JobManager();
@@ -263,6 +320,54 @@ public class Service : IServiceWCF
     {
         RankingManager mgr = new RankingManager();
         return mgr.createRankingDTO(RankingId, RankingName);
+    }
+
+    #endregion
+
+    #region Age
+
+    public List<NewRecruiteeService.AgeDto> selectAllAge()
+    {
+        AgeManager mgr = new AgeManager();
+        return mgr.selectAllAge();
+    }
+
+    public NewRecruiteeService.AgeDto selectAgeById(NewRecruiteeService.AgeDto obj)
+    {
+        AgeManager mgr = new AgeManager();
+        return mgr.selectAgeById(obj);
+    }
+
+    #endregion
+
+    #region Education
+
+    public List<NewRecruiteeService.EducationDto> selectAllEducation()
+    {
+        EducationManager mgr = new EducationManager();
+        return mgr.selectAllEducation();
+    }
+
+    public NewRecruiteeService.EducationDto selectEducationById(NewRecruiteeService.EducationDto obj)
+    {
+        EducationManager mgr = new EducationManager();
+        return mgr.selectEducationById(obj);
+    }
+
+    #endregion
+
+    #region Income
+
+    public List<NewRecruiteeService.IncomeDto> selectAllIncome()
+    {
+        IncomeManager mgr = new IncomeManager();
+        return mgr.selectAllIncome();
+    }
+
+    public NewRecruiteeService.IncomeDto selectIncomeById(NewRecruiteeService.IncomeDto obj)
+    {
+        IncomeManager mgr = new IncomeManager();
+        return mgr.selectIncomeById(obj);
     }
 
     #endregion

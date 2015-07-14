@@ -14,7 +14,7 @@ namespace UMNewElasticWebsite.Service.Interface
         Boolean insertJob(JobDto obj);
         Boolean updateJob(JobDto obj);
         Boolean deleteJob(JobDto obj);
-        JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+        JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                             String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
         List<JobDto> selectJobBySkillId(String SkillId);
         Boolean addSkillToJob(JobDto obj, String skillId);

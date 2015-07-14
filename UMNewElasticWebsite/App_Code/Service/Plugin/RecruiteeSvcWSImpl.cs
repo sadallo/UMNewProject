@@ -101,11 +101,13 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue)
+        public RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
         {
             using (NewRecruiteeService.ServiceWCFClient svc = new NewRecruiteeService.ServiceWCFClient())
             {
-                return svc.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue);
+                return svc.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email, FirstName, LastName, 
+                    Gender, AgeId, EducationId, IncomeId);
             }
             
         }

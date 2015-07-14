@@ -61,29 +61,29 @@ public interface IServiceMobile
     List<RecruiteeDto> selectAllRecruitee();
 
     [OperationContract]
-    RecruiteeDto selectRecruiteeById(System.Guid RecruiteeId);
+    RecruiteeDto selectRecruiteeById(Guid RecruiteeId);
 
     [OperationContract]
-    Boolean insertRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+    Boolean insertRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    Boolean updateRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+    Boolean updateRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    Boolean deleteRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+    Boolean deleteRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+    RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 
     [OperationContract]
-    Boolean addSkillToRecruitee(System.Guid RecruiteeId, String SkillId);
+    Boolean addSkillToRecruitee(Guid RecruiteeId, String SkillId);
 
     [OperationContract]
-    Boolean removeSkillFromRecruitee(System.Guid RecruiteeId, String SkillId);
+    Boolean removeSkillFromRecruitee(Guid RecruiteeId, String SkillId);
 
     #endregion
 

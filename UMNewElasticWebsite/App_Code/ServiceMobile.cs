@@ -30,7 +30,7 @@ public class ServiceMobile : IServiceMobile
         return dtoList;
     }
 
-    public TaskDto selectTaskById(System.Guid TaskId)
+    public TaskDto selectTaskById(Guid TaskId)
     {
         TaskManager mgr = new TaskManager();
         Task obj = new Task();
@@ -46,25 +46,80 @@ public class ServiceMobile : IServiceMobile
         }
     }
 
-    public Boolean insertTask(System.Guid TaskId, System.Guid JobId, System.Guid RecruiteeId, String TaskDescription)
+    public Boolean insertTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription)
     {
         Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription);
         TaskManager mgr = new TaskManager();
         return mgr.insertTask(obj);
     }
 
-    public Boolean updateTask(System.Guid TaskId, System.Guid JobId, System.Guid RecruiteeId, String TaskDescription)
+    public Boolean updateTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription)
     {
         Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription);
         TaskManager mgr = new TaskManager();
         return mgr.updateTask(obj);
     }
 
-    public Boolean deleteTask(System.Guid TaskId, System.Guid JobId, System.Guid RecruiteeId, String TaskDescription)
+    public Boolean deleteTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription)
     {
         Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription);
         TaskManager mgr = new TaskManager();
         return mgr.deleteTask(obj);
+    }
+    #endregion
+
+    #region RecommendedJob
+
+    public List<RecommendedJobDto> selectAllRecommendedJob()
+    {
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        List<RecommendedJob> taskList = mgr.selectAllRecommendedJob();
+        List<RecommendedJobDto> dtoList = new List<RecommendedJobDto>();
+
+        foreach (RecommendedJob task in taskList)
+        {
+            dtoList.Add(RecommendedJobDto.createRecommendedJobDTO(task));
+        }
+
+        return dtoList;
+    }
+
+    public RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(Guid JobId, Guid RecruiteeId)
+    {
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        RecommendedJob obj = new RecommendedJob();
+        obj.JobId = JobId;
+        obj.RecruiteeId = RecruiteeId;
+        obj = mgr.selectRecommendedJobByIdAndRecruiteeId(obj);
+        if (obj != null)
+        {
+            return RecommendedJobDto.createRecommendedJobDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Boolean insertRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue)
+    {
+        RecommendedJob obj = RecommendedJob.createRecommendedJob(JobId, RecruiteeId, (decimal)PredictedRankingValue);
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        return mgr.insertRecommendedJob(obj);
+    }
+
+    public Boolean updateRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue)
+    {
+        RecommendedJob obj = RecommendedJob.createRecommendedJob(JobId, RecruiteeId, (decimal)PredictedRankingValue);
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        return mgr.updateRecommendedJob(obj);
+    }
+
+    public Boolean deleteRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue)
+    {
+        RecommendedJob obj = RecommendedJob.createRecommendedJob(JobId, RecruiteeId, (decimal)PredictedRankingValue);
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        return mgr.deleteRecommendedJob(obj);
     }
     #endregion
 
@@ -76,7 +131,7 @@ public class ServiceMobile : IServiceMobile
         return mgr.selectAllRecruitee();
     }
 
-    public RecruiteeDto selectRecruiteeById(System.Guid RecruiteeId)
+    public RecruiteeDto selectRecruiteeById(Guid RecruiteeId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
         RecruiteeDto obj = new RecruiteeDto();
@@ -84,31 +139,39 @@ public class ServiceMobile : IServiceMobile
         return mgr.selectRecruiteeById(obj);
     }
 
-    public Boolean insertRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue)
+    public Boolean insertRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
-        RecruiteeDto obj = mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue);
+        RecruiteeDto obj = mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email,
+                   FirstName, LastName, Gender, AgeId, EducationId, IncomeId);
         return mgr.insertRecruitee(obj);
     }
 
-    public Boolean updateRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue)
+    public Boolean updateRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
-        RecruiteeDto obj = mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue);
+        RecruiteeDto obj = mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email,
+                   FirstName, LastName, Gender, AgeId, EducationId, IncomeId);
         return mgr.updateRecruitee(obj);
     }
 
-    public Boolean deleteRecruitee(System.Guid RecruiteeId, String RankingId, double RankingValue)
+    public Boolean deleteRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
-        RecruiteeDto obj = mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue);
+        RecruiteeDto obj = mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email,
+                   FirstName, LastName, Gender, AgeId, EducationId, IncomeId);
         return mgr.deleteRecruitee(obj);
     }
 
-    public RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue)
+    public RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
         RecruiteeManager mgr = new RecruiteeManager();
-        return mgr.createRecruiteeDTO(RecruiteeId,RankingId, RankingValue);
+        return mgr.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email,
+                   FirstName, LastName, Gender, AgeId, EducationId, IncomeId);
     }
 
     public List<RecruiteeDto> selectRecruiteeBySkillId(String SkillId)
@@ -143,7 +206,7 @@ public class ServiceMobile : IServiceMobile
         return mgr.selectAllJob();
     }
 
-    public JobDto selectJobById(System.Guid JobId)
+    public JobDto selectJobById(Guid JobId)
     {
         JobManager mgr = new JobManager();
         JobDto obj = new JobDto();
@@ -151,7 +214,7 @@ public class ServiceMobile : IServiceMobile
         return mgr.selectJobById(obj);
     }
 
-    public Boolean insertJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+    public Boolean insertJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                                     String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
     {
         JobManager mgr = new JobManager();
@@ -159,7 +222,7 @@ public class ServiceMobile : IServiceMobile
         return mgr.insertJob(obj);
     }
 
-    public Boolean updateJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+    public Boolean updateJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                                     String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
     {
         JobManager mgr = new JobManager();
@@ -167,7 +230,7 @@ public class ServiceMobile : IServiceMobile
         return mgr.updateJob(obj);
     }
 
-    public Boolean deleteJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+    public Boolean deleteJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                                     String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
     {
         JobManager mgr = new JobManager();
@@ -175,7 +238,7 @@ public class ServiceMobile : IServiceMobile
         return mgr.deleteJob(obj);
     }
     
-    public JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
+    public JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
                                     String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
     {
         JobManager mgr = new JobManager();
@@ -283,6 +346,60 @@ public class ServiceMobile : IServiceMobile
     {
         RankingManager mgr = new RankingManager();
         return mgr.createRankingDTO(RankingId, RankingName);
+    }
+
+    #endregion
+
+    #region Age
+
+    public List<NewRecruiteeService.AgeDto> selectAllAge()
+    {
+        AgeManager mgr = new AgeManager();
+        return mgr.selectAllAge();
+    }
+
+    public NewRecruiteeService.AgeDto selectAgeById(String AgeId)
+    {
+        AgeManager mgr = new AgeManager();
+        NewRecruiteeService.AgeDto obj = new NewRecruiteeService.AgeDto();
+        obj.AgeId = AgeId;
+        return mgr.selectAgeById(obj);
+    }
+
+    #endregion
+
+    #region Education
+
+    public List<NewRecruiteeService.EducationDto> selectAllEducation()
+    {
+        EducationManager mgr = new EducationManager();
+        return mgr.selectAllEducation();
+    }
+
+    public NewRecruiteeService.EducationDto selectEducationById(String EducationId)
+    {
+        EducationManager mgr = new EducationManager();
+        NewRecruiteeService.EducationDto obj = new NewRecruiteeService.EducationDto();
+        obj.EducationId = EducationId;
+        return mgr.selectEducationById(obj);
+    }
+
+    #endregion
+
+    #region Income
+
+    public List<NewRecruiteeService.IncomeDto> selectAllIncome()
+    {
+        IncomeManager mgr = new IncomeManager();
+        return mgr.selectAllIncome();
+    }
+
+    public NewRecruiteeService.IncomeDto selectIncomeById(String IncomeId)
+    {
+        IncomeManager mgr = new IncomeManager();
+        NewRecruiteeService.IncomeDto obj = new NewRecruiteeService.IncomeDto();
+        obj.IncomeId = IncomeId;
+        return mgr.selectIncomeById(obj);
     }
 
     #endregion

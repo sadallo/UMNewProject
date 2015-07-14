@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using UMNewElasticWebsite.Service.Interface;
 using UMNewElasticWebsite.Exceptions.Service;
-using NewJobService;
+using NewRecruiteeService;
 
 namespace UMNewElasticWebsite.Business
 {
-    public class SkillJobManager : BusinessManager
+    public class AgeManager : BusinessManager
     {
 
-        public List<SkillDto> selectAllSkillJob()
+        public List<AgeDto> selectAllAge()
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.selectAllSkillJob();
+                IAgeSvc svc = (IAgeSvc)this.getService(typeof(IAgeSvc).Name);
+                return svc.selectAllAge();
             }
             catch (ServiceLoadException ex)
             {
@@ -24,12 +24,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public SkillDto selectSkillById(SkillDto obj)
+        public AgeDto selectAgeById(AgeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.selectSkillById(obj);
+                IAgeSvc svc = (IAgeSvc)this.getService(typeof(IAgeSvc).Name);
+                return svc.selectAgeById(obj);
             }
             catch (ServiceLoadException ex)
             {
@@ -37,12 +37,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public Boolean insertSkill(SkillDto obj)
+        public Boolean insertAge(AgeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.insertSkill(obj);
+                IAgeSvc svc = (IAgeSvc)this.getService(typeof(IAgeSvc).Name);
+                return svc.insertAge(obj);
 
             }
             catch (ServiceLoadException ex)
@@ -51,12 +51,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public Boolean updateSkill(SkillDto obj)
+        public Boolean updateAge(AgeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.updateSkill(obj);
+                IAgeSvc svc = (IAgeSvc)this.getService(typeof(IAgeSvc).Name);
+                return svc.updateAge(obj);
 
             }
             catch (ServiceLoadException ex)
@@ -65,12 +65,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public Boolean deleteSkill(SkillDto obj)
+        public Boolean deleteAge(AgeDto obj)
         {
             try
             {
-                ISkillJobSvc svc = (ISkillJobSvc)this.getService(typeof(ISkillJobSvc).Name);
-                return svc.deleteSkill(obj);
+                IAgeSvc svc = (IAgeSvc)this.getService(typeof(IAgeSvc).Name);
+                return svc.deleteAge(obj);
             }
             catch (ServiceLoadException ex)
             {
@@ -78,20 +78,18 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        //public SkillDto createSkillDTO(Guid SkillId, String RankingId)
+        //public AgeDto createAgeDTO(Guid AgeId, String AgeId)
         //{
         //    try
         //    {
-        //        ISkillSvc svc = (ISkillSvc)this.getService(typeof(ISkillSvc).Name);
-        //        return svc.createSkillDTO(SkillId, RankingId); 
+        //        IAgeSvc svc = (IAgeSvc)this.getService(typeof(IAgeSvc).Name);
+        //        return svc.createAgeDTO(AgeId, AgeId);
         //    }
         //    catch (ServiceLoadException ex)
         //    {
         //        return null;
         //    }
         //}
-
-
     }
        
 }

@@ -157,6 +157,96 @@
   <wsdl:message name="IServiceWCF_deleteSkill_OutputMessage">
     <wsdl:part name="parameters" element="tns:deleteSkillResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAllAge_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllAge" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAllAge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAgeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAgeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAgeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAgeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_insertAge_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAge" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_insertAge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_updateAge_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAge" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_updateAge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_deleteAge_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAge" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_deleteAge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAllEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllEducation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAllEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectEducationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectEducationById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectEducationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectEducationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_insertEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertEducation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_insertEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_updateEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateEducation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_updateEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_deleteEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteEducation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_deleteEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAllIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllIncome" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectAllIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectIncomeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectIncomeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectIncomeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectIncomeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_insertIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertIncome" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_insertIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_updateIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateIncome" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_updateIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_deleteIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteIncome" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_deleteIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteIncomeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceWCF">
     <wsdl:operation name="selectAllCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectAllCategory" message="tns:IServiceWCF_selectAllCategory_InputMessage" />
@@ -257,6 +347,66 @@
     <wsdl:operation name="deleteSkill">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/deleteSkill" message="tns:IServiceWCF_deleteSkill_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/deleteSkillResponse" message="tns:IServiceWCF_deleteSkill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllAge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectAllAge" message="tns:IServiceWCF_selectAllAge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectAllAgeResponse" message="tns:IServiceWCF_selectAllAge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAgeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectAgeById" message="tns:IServiceWCF_selectAgeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectAgeByIdResponse" message="tns:IServiceWCF_selectAgeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/insertAge" message="tns:IServiceWCF_insertAge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/insertAgeResponse" message="tns:IServiceWCF_insertAge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/updateAge" message="tns:IServiceWCF_updateAge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/updateAgeResponse" message="tns:IServiceWCF_updateAge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/deleteAge" message="tns:IServiceWCF_deleteAge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/deleteAgeResponse" message="tns:IServiceWCF_deleteAge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllEducation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectAllEducation" message="tns:IServiceWCF_selectAllEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectAllEducationResponse" message="tns:IServiceWCF_selectAllEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectEducationById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectEducationById" message="tns:IServiceWCF_selectEducationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectEducationByIdResponse" message="tns:IServiceWCF_selectEducationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertEducation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/insertEducation" message="tns:IServiceWCF_insertEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/insertEducationResponse" message="tns:IServiceWCF_insertEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEducation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/updateEducation" message="tns:IServiceWCF_updateEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/updateEducationResponse" message="tns:IServiceWCF_updateEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEducation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/deleteEducation" message="tns:IServiceWCF_deleteEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/deleteEducationResponse" message="tns:IServiceWCF_deleteEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectAllIncome" message="tns:IServiceWCF_selectAllIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectAllIncomeResponse" message="tns:IServiceWCF_selectAllIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectIncomeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectIncomeById" message="tns:IServiceWCF_selectIncomeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectIncomeByIdResponse" message="tns:IServiceWCF_selectIncomeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/insertIncome" message="tns:IServiceWCF_insertIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/insertIncomeResponse" message="tns:IServiceWCF_insertIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/updateIncome" message="tns:IServiceWCF_updateIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/updateIncomeResponse" message="tns:IServiceWCF_updateIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/deleteIncome" message="tns:IServiceWCF_deleteIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/deleteIncomeResponse" message="tns:IServiceWCF_deleteIncome_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceWCF" type="tns:IServiceWCF">
@@ -479,6 +629,141 @@
     </wsdl:operation>
     <wsdl:operation name="deleteSkill">
       <soap:operation soapAction="http://tempuri.org/IServiceWCF/deleteSkill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllAge">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectAllAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAgeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectAgeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAge">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/insertAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAge">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/updateAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAge">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/deleteAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllEducation">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectAllEducation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectEducationById">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectEducationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertEducation">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/insertEducation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEducation">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/updateEducation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEducation">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/deleteEducation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllIncome">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectAllIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectIncomeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectIncomeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertIncome">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/insertIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateIncome">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/updateIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteIncome">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/deleteIncome" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

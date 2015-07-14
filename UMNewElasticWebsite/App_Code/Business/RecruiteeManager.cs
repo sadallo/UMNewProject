@@ -78,12 +78,14 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public RecruiteeDto createRecruiteeDTO(System.Guid RecruiteeId, String RankingId, double RankingValue)
+        public RecruiteeDto createRecruiteeDTO(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
+                   String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
         {
             try
             {
                 IRecruiteeSvc svc = (IRecruiteeSvc)this.getService(typeof(IRecruiteeSvc).Name);
-                return svc.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue);
+                return svc.createRecruiteeDTO(RecruiteeId, RankingId, RankingValue, Email, FirstName, LastName,
+                    Gender, AgeId, EducationId, IncomeId);
             }
             catch (ServiceLoadException ex)
             {

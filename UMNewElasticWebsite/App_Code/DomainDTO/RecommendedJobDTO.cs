@@ -8,11 +8,8 @@ using UMNewElasticWebsite.Models;
 namespace UMNewElasticWebsite.DomainDTO
 {
     [DataContract]
-    public class TaskDto
+    public class RecommendedJobDto
     {
-        [DataMember]
-        public Guid TaskId { get; set; }
-
         [DataMember]
         public Guid JobId { get; set; }
 
@@ -20,26 +17,24 @@ namespace UMNewElasticWebsite.DomainDTO
         public Guid RecruiteeId { get; set; }
 
         [DataMember]
-        public string TaskDescription { get; set; }
+        public double PredictedRankingValue { get; set; }
 
 
-        public static TaskDto createTaskDTO(Task obj)
+        public static RecommendedJobDto createRecommendedJobDTO(RecommendedJob obj)
         {
-            TaskDto task = new TaskDto();
-            task.TaskId = obj.TaskId;
+            RecommendedJobDto task = new RecommendedJobDto();
             task.JobId = obj.JobId;
             task.RecruiteeId = obj.RecruiteeId;
-            task.TaskDescription = obj.TaskDescription;
+            task.PredictedRankingValue = (double)obj.PredictedRankingValue;
             return task;
         }
 
-        public static TaskDto createTaskDTO(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription)
+        public static RecommendedJobDto createRecommendedJobDTO(Guid JobId, Guid RecruiteeId, decimal PredictedRankingValue)
         {
-            TaskDto task = new TaskDto();
-            task.TaskId = TaskId;
+            RecommendedJobDto task = new RecommendedJobDto();
             task.JobId = JobId;
             task.RecruiteeId = RecruiteeId;
-            task.TaskDescription = TaskDescription;
+            task.PredictedRankingValue = (double)PredictedRankingValue;
             return task;
         }
     }

@@ -14,7 +14,7 @@ namespace UMNewElasticWebsite.Service.Interface
         Boolean insertSkill(SkillDto obj);
         Boolean updateSkill(SkillDto obj);
         Boolean deleteSkill(SkillDto obj);
-        //SkillDto createSkillDTO(System.Guid SkillId, String RankingId);
+        //SkillDto createSkillDTO(Guid SkillId, String RankingId);
 
     }
 }
