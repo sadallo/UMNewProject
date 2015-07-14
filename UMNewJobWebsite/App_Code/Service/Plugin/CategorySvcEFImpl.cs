@@ -11,7 +11,7 @@ namespace UMNewJobWebsite.Service.Plugin
     {
         public List<Category> selectAllCategory()
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try 
             {
@@ -25,7 +25,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Category selectCategoryById(Category obj)
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {
@@ -40,7 +40,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean insertCategory(Category obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean updateCategory(Category obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -98,7 +98,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean deleteCategory(Category obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {

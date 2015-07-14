@@ -11,7 +11,7 @@ namespace UMNewJobWebsite.Service.Plugin
     {
         public List<Employer> selectAllEmployer()
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {
@@ -25,7 +25,7 @@ namespace UMNewJobWebsite.Service.Plugin
         
         public Employer selectEmployerById(Employer obj)
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
             
             try
             {
@@ -40,7 +40,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean insertEmployer(Employer obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean updateEmployer(Employer obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -98,7 +98,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean deleteEmployer(Employer obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {

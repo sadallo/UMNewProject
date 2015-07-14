@@ -11,7 +11,7 @@ namespace UMNewJobWebsite.Service.Plugin
     {
         public List<Job> selectAllJob()
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {
@@ -25,7 +25,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Job selectJobById(Job obj)
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {               
@@ -39,7 +39,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean insertJob(Job obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -57,7 +57,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean updateJob(Job obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -102,7 +102,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean deleteJob(Job obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -139,7 +139,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean addSkillToJob(Job obj, String skillId)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -180,7 +180,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean removeSkillFromJob(Job obj, String skillId)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -221,7 +221,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public List<Job> selectJobBySkillId(String skillId)
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {

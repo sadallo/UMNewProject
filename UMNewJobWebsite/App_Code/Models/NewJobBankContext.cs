@@ -4,15 +4,15 @@ using UMNewJobWebsite.Models.Mapping;
 
 namespace UMNewJobWebsite.Models
 {
-    public class JobBankContext : DbContext
+    public class NewJobBankContext : DbContext
     {
-        static JobBankContext()
+        static NewJobBankContext()
         {
-            Database.SetInitializer<JobBankContext>(null);
+            Database.SetInitializer<NewJobBankContext>(null);
         }
 
-        public JobBankContext()
-            : base("Name=JobBankContext")
+        public NewJobBankContext()
+            : base("Name=NewJobBankContext")
         {
         }
 

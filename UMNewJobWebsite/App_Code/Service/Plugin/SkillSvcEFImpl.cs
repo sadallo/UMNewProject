@@ -11,7 +11,7 @@ namespace UMNewJobWebsite.Service.Plugin
     {
         public List<Skill> selectAllSkill()
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {
@@ -25,7 +25,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Skill selectSkillById(Skill obj)
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {
@@ -40,7 +40,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean insertSkill(Skill obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean updateSkill(Skill obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -98,7 +98,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean deleteSkill(Skill obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {

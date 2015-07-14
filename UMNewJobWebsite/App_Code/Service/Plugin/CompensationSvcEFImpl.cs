@@ -11,7 +11,7 @@ namespace UMNewJobWebsite.Service.Plugin
     {
         public List<Compensation> selectAllCompensation()
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {
@@ -25,7 +25,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Compensation selectCompensationById(Compensation obj)
         {
-            JobBankContext db = new JobBankContext();
+            NewJobBankContext db = new NewJobBankContext();
 
             try
             {
@@ -40,7 +40,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean insertCompensation(Compensation obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean updateCompensation(Compensation obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
@@ -98,7 +98,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
         public Boolean deleteCompensation(Compensation obj)
         {
-            using (JobBankContext db = new JobBankContext())
+            using (NewJobBankContext db = new NewJobBankContext())
             {
                 try
                 {
