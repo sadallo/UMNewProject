@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceMobile" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UMNewElasticWebsite.DomainDTO" />
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" />
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceMobile_selectAllTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllTask" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectTaskById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectTaskById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectTaskById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectTaskByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertTask" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTask" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllRecommendedJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllRecommendedJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllRecommendedJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllRecommendedJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecommendedJobByIdAndRecruiteeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecommendedJobByIdAndRecruiteeId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecommendedJobByIdAndRecruiteeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecommendedJobByIdAndRecruiteeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertRecommendedJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertRecommendedJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertRecommendedJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertRecommendedJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateRecommendedJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecommendedJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateRecommendedJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecommendedJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteRecommendedJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecommendedJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteRecommendedJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecommendedJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllRecruitee_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllRecruitee" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllRecruitee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllRecruiteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecruiteeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecruiteeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecruiteeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecruiteeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertRecruitee_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertRecruitee" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertRecruitee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertRecruiteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateRecruitee_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecruitee" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateRecruitee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecruiteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteRecruitee_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecruitee" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteRecruitee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecruiteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_createRecruiteeDTO_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRecruiteeDTO" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_createRecruiteeDTO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRecruiteeDTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecruiteeBySkillId_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecruiteeBySkillId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecruiteeBySkillId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecruiteeBySkillIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_addSkillToRecruitee_InputMessage">
+    <wsdl:part name="parameters" element="tns:addSkillToRecruitee" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_addSkillToRecruitee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addSkillToRecruiteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_removeSkillFromRecruitee_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeSkillFromRecruitee" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_removeSkillFromRecruitee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeSkillFromRecruiteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_createJobDTO_InputMessage">
+    <wsdl:part name="parameters" element="tns:createJobDTO" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_createJobDTO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createJobDTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobBySkillId_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobBySkillId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobBySkillId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobBySkillIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_addSkillToJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:addSkillToJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_addSkillToJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addSkillToJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_removeSkillFromJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeSkillFromJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_removeSkillFromJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeSkillFromJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllSkillJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllSkillJob" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllSkillJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllSkillJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectSkillJobById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectSkillJobById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectSkillJobById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectSkillJobByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllSkillRecruitee_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllSkillRecruitee" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllSkillRecruitee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllSkillRecruiteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectSkillRecruiteeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectSkillRecruiteeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectSkillRecruiteeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectSkillRecruiteeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllRanking_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllRanking" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllRanking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRankingById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectRankingById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRankingById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectRankingByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertRanking_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertRanking" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_insertRanking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateRanking_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRanking" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_updateRanking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteRanking_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRanking" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_deleteRanking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_createRankingDTO_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRankingDTO" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_createRankingDTO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRankingDTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllAge_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllAge" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllAge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAgeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAgeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAgeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAgeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllEducation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectEducationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectEducationById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectEducationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectEducationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllIncome" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectAllIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectAllIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectIncomeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectIncomeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectIncomeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectIncomeByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceMobile">
+    <wsdl:operation name="selectAllTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllTask" message="tns:IServiceMobile_selectAllTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllTaskResponse" message="tns:IServiceMobile_selectAllTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectTaskById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectTaskById" message="tns:IServiceMobile_selectTaskById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectTaskByIdResponse" message="tns:IServiceMobile_selectTaskById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/insertTask" message="tns:IServiceMobile_insertTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/insertTaskResponse" message="tns:IServiceMobile_insertTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/updateTask" message="tns:IServiceMobile_updateTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/updateTaskResponse" message="tns:IServiceMobile_updateTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/deleteTask" message="tns:IServiceMobile_deleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/deleteTaskResponse" message="tns:IServiceMobile_deleteTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllRecommendedJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRecommendedJob" message="tns:IServiceMobile_selectAllRecommendedJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRecommendedJobResponse" message="tns:IServiceMobile_selectAllRecommendedJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectRecommendedJobByIdAndRecruiteeId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectRecommendedJobByIdAndRecruiteeId" message="tns:IServiceMobile_selectRecommendedJobByIdAndRecruiteeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectRecommendedJobByIdAndRecruiteeIdResponse" message="tns:IServiceMobile_selectRecommendedJobByIdAndRecruiteeId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertRecommendedJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/insertRecommendedJob" message="tns:IServiceMobile_insertRecommendedJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/insertRecommendedJobResponse" message="tns:IServiceMobile_insertRecommendedJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRecommendedJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/updateRecommendedJob" message="tns:IServiceMobile_updateRecommendedJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/updateRecommendedJobResponse" message="tns:IServiceMobile_updateRecommendedJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecommendedJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/deleteRecommendedJob" message="tns:IServiceMobile_deleteRecommendedJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/deleteRecommendedJobResponse" message="tns:IServiceMobile_deleteRecommendedJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllRecruitee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRecruitee" message="tns:IServiceMobile_selectAllRecruitee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRecruiteeResponse" message="tns:IServiceMobile_selectAllRecruitee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectRecruiteeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectRecruiteeById" message="tns:IServiceMobile_selectRecruiteeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectRecruiteeByIdResponse" message="tns:IServiceMobile_selectRecruiteeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertRecruitee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/insertRecruitee" message="tns:IServiceMobile_insertRecruitee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/insertRecruiteeResponse" message="tns:IServiceMobile_insertRecruitee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRecruitee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/updateRecruitee" message="tns:IServiceMobile_updateRecruitee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/updateRecruiteeResponse" message="tns:IServiceMobile_updateRecruitee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecruitee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/deleteRecruitee" message="tns:IServiceMobile_deleteRecruitee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/deleteRecruiteeResponse" message="tns:IServiceMobile_deleteRecruitee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRecruiteeDTO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/createRecruiteeDTO" message="tns:IServiceMobile_createRecruiteeDTO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/createRecruiteeDTOResponse" message="tns:IServiceMobile_createRecruiteeDTO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectRecruiteeBySkillId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectRecruiteeBySkillId" message="tns:IServiceMobile_selectRecruiteeBySkillId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectRecruiteeBySkillIdResponse" message="tns:IServiceMobile_selectRecruiteeBySkillId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addSkillToRecruitee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/addSkillToRecruitee" message="tns:IServiceMobile_addSkillToRecruitee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/addSkillToRecruiteeResponse" message="tns:IServiceMobile_addSkillToRecruitee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeSkillFromRecruitee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/removeSkillFromRecruitee" message="tns:IServiceMobile_removeSkillFromRecruitee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/removeSkillFromRecruiteeResponse" message="tns:IServiceMobile_removeSkillFromRecruitee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllJob" message="tns:IServiceMobile_selectAllJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllJobResponse" message="tns:IServiceMobile_selectAllJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectJobById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectJobById" message="tns:IServiceMobile_selectJobById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectJobByIdResponse" message="tns:IServiceMobile_selectJobById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/insertJob" message="tns:IServiceMobile_insertJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/insertJobResponse" message="tns:IServiceMobile_insertJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/updateJob" message="tns:IServiceMobile_updateJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/updateJobResponse" message="tns:IServiceMobile_updateJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/deleteJob" message="tns:IServiceMobile_deleteJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/deleteJobResponse" message="tns:IServiceMobile_deleteJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createJobDTO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/createJobDTO" message="tns:IServiceMobile_createJobDTO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/createJobDTOResponse" message="tns:IServiceMobile_createJobDTO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectJobBySkillId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectJobBySkillId" message="tns:IServiceMobile_selectJobBySkillId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectJobBySkillIdResponse" message="tns:IServiceMobile_selectJobBySkillId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addSkillToJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/addSkillToJob" message="tns:IServiceMobile_addSkillToJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/addSkillToJobResponse" message="tns:IServiceMobile_addSkillToJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeSkillFromJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/removeSkillFromJob" message="tns:IServiceMobile_removeSkillFromJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/removeSkillFromJobResponse" message="tns:IServiceMobile_removeSkillFromJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllSkillJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllSkillJob" message="tns:IServiceMobile_selectAllSkillJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllSkillJobResponse" message="tns:IServiceMobile_selectAllSkillJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectSkillJobById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectSkillJobById" message="tns:IServiceMobile_selectSkillJobById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectSkillJobByIdResponse" message="tns:IServiceMobile_selectSkillJobById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllSkillRecruitee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllSkillRecruitee" message="tns:IServiceMobile_selectAllSkillRecruitee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllSkillRecruiteeResponse" message="tns:IServiceMobile_selectAllSkillRecruitee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectSkillRecruiteeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectSkillRecruiteeById" message="tns:IServiceMobile_selectSkillRecruiteeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectSkillRecruiteeByIdResponse" message="tns:IServiceMobile_selectSkillRecruiteeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllRanking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRanking" message="tns:IServiceMobile_selectAllRanking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRankingResponse" message="tns:IServiceMobile_selectAllRanking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectRankingById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectRankingById" message="tns:IServiceMobile_selectRankingById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectRankingByIdResponse" message="tns:IServiceMobile_selectRankingById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertRanking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/insertRanking" message="tns:IServiceMobile_insertRanking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/insertRankingResponse" message="tns:IServiceMobile_insertRanking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRanking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/updateRanking" message="tns:IServiceMobile_updateRanking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/updateRankingResponse" message="tns:IServiceMobile_updateRanking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRanking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/deleteRanking" message="tns:IServiceMobile_deleteRanking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/deleteRankingResponse" message="tns:IServiceMobile_deleteRanking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRankingDTO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/createRankingDTO" message="tns:IServiceMobile_createRankingDTO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/createRankingDTOResponse" message="tns:IServiceMobile_createRankingDTO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllAge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllAge" message="tns:IServiceMobile_selectAllAge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllAgeResponse" message="tns:IServiceMobile_selectAllAge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAgeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAgeById" message="tns:IServiceMobile_selectAgeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAgeByIdResponse" message="tns:IServiceMobile_selectAgeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllEducation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllEducation" message="tns:IServiceMobile_selectAllEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllEducationResponse" message="tns:IServiceMobile_selectAllEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectEducationById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectEducationById" message="tns:IServiceMobile_selectEducationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectEducationByIdResponse" message="tns:IServiceMobile_selectEducationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAllIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllIncome" message="tns:IServiceMobile_selectAllIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllIncomeResponse" message="tns:IServiceMobile_selectAllIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectIncomeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectIncomeById" message="tns:IServiceMobile_selectIncomeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectIncomeByIdResponse" message="tns:IServiceMobile_selectIncomeById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceMobile" type="tns:IServiceMobile">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="selectAllTask">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectTaskById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectTaskById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertTask">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/insertTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTask">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/updateTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTask">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/deleteTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllRecommendedJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllRecommendedJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectRecommendedJobByIdAndRecruiteeId">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectRecommendedJobByIdAndRecruiteeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertRecommendedJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/insertRecommendedJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRecommendedJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/updateRecommendedJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecommendedJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/deleteRecommendedJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllRecruitee">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllRecruitee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectRecruiteeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectRecruiteeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertRecruitee">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/insertRecruitee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRecruitee">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/updateRecruitee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecruitee">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/deleteRecruitee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRecruiteeDTO">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/createRecruiteeDTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectRecruiteeBySkillId">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectRecruiteeBySkillId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSkillToRecruitee">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/addSkillToRecruitee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeSkillFromRecruitee">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/removeSkillFromRecruitee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectJobById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectJobById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/insertJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/updateJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/deleteJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createJobDTO">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/createJobDTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectJobBySkillId">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectJobBySkillId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSkillToJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/addSkillToJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeSkillFromJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/removeSkillFromJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllSkillJob">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllSkillJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectSkillJobById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectSkillJobById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllSkillRecruitee">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllSkillRecruitee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectSkillRecruiteeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectSkillRecruiteeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllRanking">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllRanking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectRankingById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectRankingById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertRanking">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/insertRanking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRanking">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/updateRanking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRanking">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/deleteRanking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRankingDTO">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/createRankingDTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllAge">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAgeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAgeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllEducation">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllEducation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectEducationById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectEducationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAllIncome">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectIncomeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectIncomeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceMobile">
+    <wsdl:port name="BasicHttpBinding_IServiceMobile" binding="tns:BasicHttpBinding_IServiceMobile">
+      <soap:address location="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

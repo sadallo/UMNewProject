@@ -84,13 +84,13 @@ public class ServiceMobile : IServiceMobile
         return dtoList;
     }
 
-    public RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(Guid JobId, Guid RecruiteeId)
+    public RecommendedJobDto selectRecommendedJobByJobIdAndRecruiteeId(Guid JobId, Guid RecruiteeId)
     {
         RecommendedJobManager mgr = new RecommendedJobManager();
         RecommendedJob obj = new RecommendedJob();
         obj.JobId = JobId;
         obj.RecruiteeId = RecruiteeId;
-        obj = mgr.selectRecommendedJobByIdAndRecruiteeId(obj);
+        obj = mgr.selectRecommendedJobByJobIdAndRecruiteeId(obj);
         if (obj != null)
         {
             return RecommendedJobDto.createRecommendedJobDTO(obj);

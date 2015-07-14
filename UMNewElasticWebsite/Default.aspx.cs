@@ -17,6 +17,10 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //ServiceMobile svc = new ServiceMobile();
+        //List<RecommendedJobDto> list = svc.selectAllRecommendedJob();
+        //List<TaskDto> list_task = svc.selectAllTask();
+        //RecommendedJobDto rec_job = svc.selectRecommendedJobByJobIdAndRecruiteeId(new Guid("18789F2D-B66F-48D4-A082-20003868C33A"), new Guid("666B43D8-3FF8-4438-BEC8-C2BE7B340D50"));
 
     }
 

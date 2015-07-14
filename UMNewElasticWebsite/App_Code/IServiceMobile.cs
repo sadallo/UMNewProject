@@ -34,7 +34,7 @@ public interface IServiceMobile
     List<RecommendedJobDto> selectAllRecommendedJob();
 
     [OperationContract]
-    RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(Guid JobId, Guid RecruiteeId);
+    RecommendedJobDto selectRecommendedJobByJobIdAndRecruiteeId(Guid JobId, Guid RecruiteeId);
 
     [OperationContract]
     Boolean insertRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue);

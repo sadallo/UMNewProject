@@ -23,14 +23,13 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public RecommendedJob selectRecommendedJobByIdAndRecruiteeId(RecommendedJob obj)
+        public RecommendedJob selectRecommendedJobByJobIdAndRecruiteeId(RecommendedJob obj)
         {
             NewElasticBankContext db = new NewElasticBankContext();
 
             try
             {
-
-                return db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
+                return db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByJobIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "', @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
             }
             catch (Exception ex)
             {
@@ -63,7 +62,7 @@ namespace UMNewElasticWebsite.Service.Plugin
                 try
                 {
 
-                    RecommendedJob rec_job = db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
+                    RecommendedJob rec_job = db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByJobIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
 
                     if (rec_job != null)
                     {
@@ -101,7 +100,7 @@ namespace UMNewElasticWebsite.Service.Plugin
             {
                 try
                 {
-                    RecommendedJob rec_job = db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
+                    RecommendedJob rec_job = db.RecommendedJobs.SqlQuery("dbo.SelectRecommendedJobByJobIdAndRecruiteeId @JobId='" + obj.JobId.ToString() + "' @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
 
                     if (rec_job != null)
                     {

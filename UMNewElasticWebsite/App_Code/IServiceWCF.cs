@@ -36,7 +36,7 @@ public interface IServiceWCF
     List<RecommendedJobDto> selectAllRecommendedJob();
 
     [OperationContract]
-    RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(RecommendedJobDto obj);
+    RecommendedJobDto selectRecommendedJobByJobIdAndRecruiteeId(RecommendedJobDto obj);
 
     [OperationContract]
     Boolean insertRecommendedJob(RecommendedJobDto obj);

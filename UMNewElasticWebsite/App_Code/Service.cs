@@ -85,13 +85,13 @@ public class Service : IServiceWCF
         return dtoList;
     }
 
-    public RecommendedJobDto selectRecommendedJobByIdAndRecruiteeId(RecommendedJobDto dto)
+    public RecommendedJobDto selectRecommendedJobByJobIdAndRecruiteeId(RecommendedJobDto dto)
     {
         RecommendedJobManager mgr = new RecommendedJobManager();
         RecommendedJob obj = new RecommendedJob();
         obj.JobId = dto.JobId;
         obj.RecruiteeId = dto.RecruiteeId;
-        obj = mgr.selectRecommendedJobByIdAndRecruiteeId(obj);
+        obj = mgr.selectRecommendedJobByJobIdAndRecruiteeId(obj);
         if (obj != null)
         {
             return RecommendedJobDto.createRecommendedJobDTO(obj);

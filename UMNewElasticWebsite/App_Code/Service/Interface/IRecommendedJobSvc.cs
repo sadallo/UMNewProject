@@ -10,7 +10,7 @@ namespace UMNewElasticWebsite.Service.Interface
 	public interface IRecommendedJobSvc : IService
 	{
         List<RecommendedJob> selectAllRecommendedJob();
-        RecommendedJob selectRecommendedJobByIdAndRecruiteeId(RecommendedJob obj);
+        RecommendedJob selectRecommendedJobByJobIdAndRecruiteeId(RecommendedJob obj);
         Boolean insertRecommendedJob(RecommendedJob obj);
         Boolean updateRecommendedJob(RecommendedJob obj);
         Boolean deleteRecommendedJob(RecommendedJob obj);

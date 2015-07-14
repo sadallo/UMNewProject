@@ -24,12 +24,12 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public RecommendedJob selectRecommendedJobByIdAndRecruiteeId(RecommendedJob obj)
+        public RecommendedJob selectRecommendedJobByJobIdAndRecruiteeId(RecommendedJob obj)
         {
             try
             {
                 IRecommendedJobSvc svc = (IRecommendedJobSvc)this.getService(typeof(IRecommendedJobSvc).Name);
-                return svc.selectRecommendedJobByIdAndRecruiteeId(obj);
+               return svc.selectRecommendedJobByJobIdAndRecruiteeId(obj);
             }
             catch (ServiceLoadException ex)
             {
