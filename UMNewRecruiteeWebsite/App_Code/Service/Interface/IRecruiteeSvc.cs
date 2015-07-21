@@ -10,6 +10,7 @@ namespace UMNewRecruiteeWebsite.Service.Interface
     {
         List<Recruitee> selectAllRecruitee();
         Recruitee selectRecruiteeById(Recruitee obj);
+        Recruitee selectRecruiteeByEmail(Recruitee obj);
         List<Recruitee> selectRecruiteeBySkillId(String skillId);
         Boolean insertRecruitee(Recruitee obj);
         Boolean updateRecruitee(Recruitee obj);

@@ -42,6 +42,22 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 
         }
 
+        public Recruitee selectRecruiteeByEmail(Recruitee obj)
+        {
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
+
+            try
+            {
+
+                return db.Recruitees.SqlQuery("dbo.SelectRecruiteeByEmail @Email='" + obj.Email.ToString() + "'").Single();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
         public List<Recruitee> selectRecruiteeBySkillId(String skillId)
         {
             NewRecruiteeBankContext db = new NewRecruiteeBankContext();

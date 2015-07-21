@@ -139,6 +139,14 @@ public class ServiceMobile : IServiceMobile
         return mgr.selectRecruiteeById(obj);
     }
 
+    public RecruiteeDto selectRecruiteeByEmail(String Email)
+    {
+        RecruiteeManager mgr = new RecruiteeManager();
+        RecruiteeDto obj = new RecruiteeDto();
+        obj.Email = Email;
+        return mgr.selectRecruiteeByEmail(obj);
+    }
+
     public Boolean insertRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {

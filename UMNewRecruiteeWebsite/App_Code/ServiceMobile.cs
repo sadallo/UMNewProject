@@ -161,6 +161,23 @@ public class ServiceMobile : IServiceMobile
         }
     }
 
+    public RecruiteeDto selectRecruiteeByEmail(String Email)
+    {
+        RecruiteeManager mgr = new RecruiteeManager();
+        Recruitee obj = new Recruitee();
+        obj.Email = Email;
+        obj = mgr.selectRecruiteeByEmail(obj);
+
+        if (obj != null)
+        {
+            return RecruiteeDto.createRecruiteeDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public List<RecruiteeDto> selectRecruiteeBySkillId(String skillId)
     {
         RecruiteeManager mgr = new RecruiteeManager();

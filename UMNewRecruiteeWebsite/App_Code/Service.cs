@@ -161,6 +161,23 @@ public class Service : IServiceWCF
         }
     }
 
+    public RecruiteeDto selectRecruiteeByEmail(RecruiteeDto dto)
+    {
+        RecruiteeManager mgr = new RecruiteeManager();
+        Recruitee obj = new Recruitee();
+        obj.Email = dto.Email;
+        obj = mgr.selectRecruiteeByEmail(obj);
+
+        if (obj != null)
+        {
+            return RecruiteeDto.createRecruiteeDTO(obj);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public List<RecruiteeDto> selectRecruiteeBySkillId(String skillId)
     {
         RecruiteeManager mgr = new RecruiteeManager();

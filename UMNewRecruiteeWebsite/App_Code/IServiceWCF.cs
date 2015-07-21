@@ -59,6 +59,9 @@ public interface IServiceWCF
     RecruiteeDto selectRecruiteeById(RecruiteeDto obj);
 
     [OperationContract]
+    RecruiteeDto selectRecruiteeByEmail(RecruiteeDto obj);
+
+    [OperationContract]
     List<RecruiteeDto> selectRecruiteeBySkillId(String skillId);
 
     [OperationContract]

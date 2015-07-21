@@ -57,6 +57,9 @@ public interface IServiceWCF
     RecruiteeDto selectRecruiteeById(RecruiteeDto obj);
 
     [OperationContract]
+    RecruiteeDto selectRecruiteeByEmail(RecruiteeDto obj);
+
+    [OperationContract]
     Boolean insertRecruitee(RecruiteeDto obj);
 
     [OperationContract]

@@ -64,6 +64,9 @@ public interface IServiceMobile
     RecruiteeDto selectRecruiteeById(Guid RecruiteeId);
 
     [OperationContract]
+    RecruiteeDto selectRecruiteeByEmail(String Email);
+
+    [OperationContract]
     Boolean insertRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId);
 

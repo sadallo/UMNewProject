@@ -37,6 +37,19 @@ namespace UMNewRecruiteeWebsite.Business
             }
         }
 
+        public Recruitee selectRecruiteeByEmail(Recruitee obj)
+        {
+            try
+            {
+                IRecruiteeSvc svc = (IRecruiteeSvc)this.getService(typeof(IRecruiteeSvc).Name);
+                return svc.selectRecruiteeByEmail(obj);
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
+
         public List<Recruitee> selectRecruiteeBySkillId(String skillId)
         {
             try

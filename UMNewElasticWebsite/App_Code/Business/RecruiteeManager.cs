@@ -37,6 +37,19 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
+        public RecruiteeDto selectRecruiteeByEmail(RecruiteeDto obj)
+        {
+            try
+            {
+                IRecruiteeSvc svc = (IRecruiteeSvc)this.getService(typeof(IRecruiteeSvc).Name);
+                return svc.selectRecruiteeByEmail(obj);
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
+
         public Boolean insertRecruitee(RecruiteeDto obj)
         {
             try

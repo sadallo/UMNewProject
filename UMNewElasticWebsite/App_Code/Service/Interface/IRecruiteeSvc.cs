@@ -11,6 +11,7 @@ namespace UMNewElasticWebsite.Service.Interface
     {
         List<RecruiteeDto> selectAllRecruitee();
         RecruiteeDto selectRecruiteeById(RecruiteeDto obj);
+        RecruiteeDto selectRecruiteeByEmail(RecruiteeDto obj);
         Boolean insertRecruitee(RecruiteeDto obj);
         Boolean updateRecruitee(RecruiteeDto obj);
         Boolean deleteRecruitee(RecruiteeDto obj);

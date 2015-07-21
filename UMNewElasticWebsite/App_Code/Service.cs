@@ -138,6 +138,12 @@ public class Service : IServiceWCF
         return mgr.selectRecruiteeById(dto);
     }
 
+    public RecruiteeDto selectRecruiteeByEmail(RecruiteeDto dto)
+    {
+        RecruiteeManager mgr = new RecruiteeManager();
+        return mgr.selectRecruiteeByEmail(dto);
+    }
+
     public Boolean insertRecruitee(RecruiteeDto dto)
     {
         RecruiteeManager mgr = new RecruiteeManager();

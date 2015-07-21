@@ -37,6 +37,20 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
+        public RecruiteeDto selectRecruiteeByEmail(RecruiteeDto obj)
+        {
+            NewRecruiteeService.ServiceWCFClient svc = new NewRecruiteeService.ServiceWCFClient();
+
+            try
+            {
+                return svc.selectRecruiteeByEmail(obj);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public Boolean insertRecruitee(RecruiteeDto obj)
         {
             using (NewRecruiteeService.ServiceWCFClient svc = new NewRecruiteeService.ServiceWCFClient())
