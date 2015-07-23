@@ -93,7 +93,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="selectRecommendedJobByIdAndRecruiteeId">
+  <xs:element name="selectRecommendedJobByJobIdAndRecruiteeId">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q14:guid" />
@@ -101,10 +101,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="selectRecommendedJobByIdAndRecruiteeIdResponse">
+  <xs:element name="selectRecommendedJobByJobIdAndRecruiteeIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/UMNewElasticWebsite.DomainDTO" minOccurs="0" name="selectRecommendedJobByIdAndRecruiteeIdResult" nillable="true" type="q16:RecommendedJobDto" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/UMNewElasticWebsite.DomainDTO" minOccurs="0" name="selectRecommendedJobByJobIdAndRecruiteeIdResult" nillable="true" type="q16:RecommendedJobDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -182,10 +182,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="selectRecruiteeByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecruiteeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="selectRecruiteeByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectRecruiteeByEmailResult" nillable="true" type="q26:RecruiteeDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="insertRecruitee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q26:guid" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q27:guid" />
         <xs:element minOccurs="0" name="RankingId" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="RankingValue" type="xs:double" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -208,7 +222,7 @@
   <xs:element name="updateRecruitee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q27:guid" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q28:guid" />
         <xs:element minOccurs="0" name="RankingId" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="RankingValue" type="xs:double" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -231,7 +245,7 @@
   <xs:element name="deleteRecruitee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q28:guid" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q29:guid" />
         <xs:element minOccurs="0" name="RankingId" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="RankingValue" type="xs:double" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -254,7 +268,7 @@
   <xs:element name="createRecruiteeDTO">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q29:guid" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RecruiteeId" type="q30:guid" />
         <xs:element minOccurs="0" name="RankingId" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="RankingValue" type="xs:double" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -270,7 +284,7 @@
   <xs:element name="createRecruiteeDTOResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="createRecruiteeDTOResult" nillable="true" type="q30:RecruiteeDto" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="createRecruiteeDTOResult" nillable="true" type="q31:RecruiteeDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -284,7 +298,7 @@
   <xs:element name="selectRecruiteeBySkillIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectRecruiteeBySkillIdResult" nillable="true" type="q31:ArrayOfRecruiteeDto" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectRecruiteeBySkillIdResult" nillable="true" type="q32:ArrayOfRecruiteeDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -326,31 +340,31 @@
   <xs:element name="selectAllJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectAllJobResult" nillable="true" type="q32:ArrayOfJobDto" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectAllJobResult" nillable="true" type="q33:ArrayOfJobDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="selectJobById">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q33:guid" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q34:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="selectJobByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectJobByIdResult" nillable="true" type="q34:JobDto" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectJobByIdResult" nillable="true" type="q35:JobDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="insertJob">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q35:guid" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q36:guid" />
         <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="CompensationId" nillable="true" type="xs:string" />
-        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q36:guid" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q37:guid" />
         <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="JobQuota" type="xs:int" />
         <xs:element minOccurs="0" name="JobExperienceLevel" nillable="true" type="xs:string" />
@@ -368,10 +382,10 @@
   <xs:element name="updateJob">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q37:guid" />
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q38:guid" />
         <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="CompensationId" nillable="true" type="xs:string" />
-        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q38:guid" />
+        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q39:guid" />
         <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="JobQuota" type="xs:int" />
         <xs:element minOccurs="0" name="JobExperienceLevel" nillable="true" type="xs:string" />
@@ -389,10 +403,10 @@
   <xs:element name="deleteJob">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q39:guid" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q40:guid" />
         <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="CompensationId" nillable="true" type="xs:string" />
-        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q40:guid" />
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q41:guid" />
         <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="JobQuota" type="xs:int" />
         <xs:element minOccurs="0" name="JobExperienceLevel" nillable="true" type="xs:string" />
@@ -410,10 +424,10 @@
   <xs:element name="createJobDTO">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q41:guid" />
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="JobId" type="q42:guid" />
         <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="CompensationId" nillable="true" type="xs:string" />
-        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q42:guid" />
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="EmployerId" type="q43:guid" />
         <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="JobQuota" type="xs:int" />
         <xs:element minOccurs="0" name="JobExperienceLevel" nillable="true" type="xs:string" />
@@ -424,7 +438,7 @@
   <xs:element name="createJobDTOResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="createJobDTOResult" nillable="true" type="q43:JobDto" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="createJobDTOResult" nillable="true" type="q44:JobDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -438,7 +452,7 @@
   <xs:element name="selectJobBySkillIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectJobBySkillIdResult" nillable="true" type="q44:ArrayOfJobDto" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectJobBySkillIdResult" nillable="true" type="q45:ArrayOfJobDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -480,7 +494,7 @@
   <xs:element name="selectAllSkillJobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectAllSkillJobResult" nillable="true" type="q45:ArrayOfSkillDto" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectAllSkillJobResult" nillable="true" type="q46:ArrayOfSkillDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -494,7 +508,7 @@
   <xs:element name="selectSkillJobByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectSkillJobByIdResult" nillable="true" type="q46:SkillDto" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" minOccurs="0" name="selectSkillJobByIdResult" nillable="true" type="q47:SkillDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -506,7 +520,7 @@
   <xs:element name="selectAllSkillRecruiteeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllSkillRecruiteeResult" nillable="true" type="q47:ArrayOfSkillDto" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllSkillRecruiteeResult" nillable="true" type="q48:ArrayOfSkillDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -520,7 +534,7 @@
   <xs:element name="selectSkillRecruiteeByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectSkillRecruiteeByIdResult" nillable="true" type="q48:SkillDto" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectSkillRecruiteeByIdResult" nillable="true" type="q49:SkillDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -532,7 +546,7 @@
   <xs:element name="selectAllRankingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllRankingResult" nillable="true" type="q49:ArrayOfRankingDto" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllRankingResult" nillable="true" type="q50:ArrayOfRankingDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -546,7 +560,7 @@
   <xs:element name="selectRankingByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectRankingByIdResult" nillable="true" type="q50:RankingDto" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectRankingByIdResult" nillable="true" type="q51:RankingDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -606,7 +620,7 @@
   <xs:element name="createRankingDTOResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="createRankingDTOResult" nillable="true" type="q51:RankingDto" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="createRankingDTOResult" nillable="true" type="q52:RankingDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -618,7 +632,7 @@
   <xs:element name="selectAllAgeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllAgeResult" nillable="true" type="q52:ArrayOfAgeDto" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllAgeResult" nillable="true" type="q53:ArrayOfAgeDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -632,7 +646,7 @@
   <xs:element name="selectAgeByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAgeByIdResult" nillable="true" type="q53:AgeDto" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAgeByIdResult" nillable="true" type="q54:AgeDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -644,7 +658,7 @@
   <xs:element name="selectAllEducationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllEducationResult" nillable="true" type="q54:ArrayOfEducationDto" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllEducationResult" nillable="true" type="q55:ArrayOfEducationDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -658,7 +672,7 @@
   <xs:element name="selectEducationByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectEducationByIdResult" nillable="true" type="q55:EducationDto" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectEducationByIdResult" nillable="true" type="q56:EducationDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -670,7 +684,7 @@
   <xs:element name="selectAllIncomeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllIncomeResult" nillable="true" type="q56:ArrayOfIncomeDto" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectAllIncomeResult" nillable="true" type="q57:ArrayOfIncomeDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -684,7 +698,7 @@
   <xs:element name="selectIncomeByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectIncomeByIdResult" nillable="true" type="q57:IncomeDto" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" minOccurs="0" name="selectIncomeByIdResult" nillable="true" type="q58:IncomeDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

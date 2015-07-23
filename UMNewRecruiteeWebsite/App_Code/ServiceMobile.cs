@@ -195,10 +195,26 @@ public class ServiceMobile : IServiceMobile
     public Boolean insertRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
+        if (AgeId.Equals(""))
+        {
+            AgeId = null;
+        }
+
+        if (EducationId.Equals(""))
+        {
+            EducationId = null;
+        }
+
+        if (IncomeId.Equals(""))
+        {
+            IncomeId = null;
+        }
+
         if (RankingId.Equals(""))
         {
             RankingId = null;
         }
+
         Recruitee obj = Recruitee.createRecruitee(RecruiteeId, RankingId, (decimal)RankingValue, Email,
                    FirstName, LastName, Gender, AgeId, EducationId, IncomeId);
         RecruiteeManager mgr = new RecruiteeManager();
@@ -208,6 +224,25 @@ public class ServiceMobile : IServiceMobile
     public Boolean updateRecruitee(Guid RecruiteeId, String RankingId, double RankingValue, String Email,
                    String FirstName, String LastName, String Gender, String AgeId, String EducationId, String IncomeId)
     {
+        if (AgeId.Equals(""))
+        {
+            AgeId = null;
+        }
+
+        if (EducationId.Equals(""))
+        {
+            EducationId = null;
+        }
+
+        if (IncomeId.Equals(""))
+        {
+            IncomeId = null;
+        }
+
+        if (RankingId.Equals(""))
+        {
+            RankingId = null;
+        }
         Recruitee obj = Recruitee.createRecruitee(RecruiteeId, RankingId, (decimal)RankingValue, Email,
                            FirstName, LastName, Gender, AgeId, EducationId, IncomeId); 
         RecruiteeManager mgr = new RecruiteeManager();

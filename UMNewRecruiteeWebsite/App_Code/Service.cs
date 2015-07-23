@@ -194,10 +194,26 @@ public class Service : IServiceWCF
 
     public Boolean insertRecruitee(RecruiteeDto dto)
     {
+        if (dto.AgeId.Equals(""))
+        {
+            dto.AgeId = null;
+        }
+
+        if (dto.EducationId.Equals(""))
+        {
+            dto.EducationId = null;
+        }
+
+        if (dto.IncomeId.Equals(""))
+        {
+            dto.IncomeId = null;
+        }
+
         if (dto.RankingId.Equals(""))
         {
             dto.RankingId = null;
         }
+
         Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue, dto.Email,
                            dto.FirstName, dto.LastName, dto.Gender, dto.AgeId, dto.EducationId, dto.IncomeId); 
         RecruiteeManager mgr = new RecruiteeManager();
@@ -206,6 +222,25 @@ public class Service : IServiceWCF
 
     public Boolean updateRecruitee(RecruiteeDto dto)
     {
+        if (dto.AgeId != null && dto.AgeId.Equals(""))
+        {
+            dto.AgeId = null;
+        }
+
+        if (dto.EducationId != null && dto.EducationId.Equals(""))
+        {
+            dto.EducationId = null;
+        }
+
+        if (dto.IncomeId != null && dto.IncomeId.Equals(""))
+        {
+            dto.IncomeId = null;
+        }
+
+        if (dto.RankingId != null && dto.RankingId.Equals(""))
+        {
+            dto.RankingId = null;
+        }
         Recruitee obj = Recruitee.createRecruitee(dto.RecruiteeId, dto.RankingId, (decimal)dto.RankingValue, dto.Email,
                            dto.FirstName, dto.LastName, dto.Gender, dto.AgeId, dto.EducationId, dto.IncomeId); 
         RecruiteeManager mgr = new RecruiteeManager();

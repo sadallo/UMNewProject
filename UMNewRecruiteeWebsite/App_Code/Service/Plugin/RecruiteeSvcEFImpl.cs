@@ -99,11 +99,18 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
                 {
 
                     Recruitee recruitee = db.Recruitees.SqlQuery("dbo.SelectRecruiteeById @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Single();
-             
+                   
                     if (recruitee != null)
                     {
                         recruitee.RankingId = obj.RankingId;
                         recruitee.RankingValue = obj.RankingValue;
+                        recruitee.Email = obj.Email;
+                        recruitee.FirstName = obj.FirstName;
+                        recruitee.LastName = obj.LastName;
+                        recruitee.Gender = obj.Gender;
+                        recruitee.AgeId = obj.AgeId;
+                        recruitee.EducationId = obj.EducationId;
+                        recruitee.IncomeId = obj.IncomeId;
 
 
                         #region Database Submission with Rollback

@@ -85,6 +85,12 @@
   <wsdl:message name="IServiceWCF_selectRecruiteeById_OutputMessage">
     <wsdl:part name="parameters" element="tns:selectRecruiteeByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectRecruiteeByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecruiteeByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCF_selectRecruiteeByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecruiteeByEmailResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceWCF_selectRecruiteeBySkillId_InputMessage">
     <wsdl:part name="parameters" element="tns:selectRecruiteeBySkillId" />
   </wsdl:message>
@@ -299,6 +305,10 @@
     <wsdl:operation name="selectRecruiteeById">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectRecruiteeById" message="tns:IServiceWCF_selectRecruiteeById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectRecruiteeByIdResponse" message="tns:IServiceWCF_selectRecruiteeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectRecruiteeByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectRecruiteeByEmail" message="tns:IServiceWCF_selectRecruiteeByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectRecruiteeByEmailResponse" message="tns:IServiceWCF_selectRecruiteeByEmail_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="selectRecruiteeBySkillId">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectRecruiteeBySkillId" message="tns:IServiceWCF_selectRecruiteeBySkillId_InputMessage" />
@@ -521,6 +531,15 @@
     </wsdl:operation>
     <wsdl:operation name="selectRecruiteeById">
       <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectRecruiteeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectRecruiteeByEmail">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectRecruiteeByEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
