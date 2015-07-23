@@ -28,8 +28,12 @@ public partial class _Default : System.Web.UI.Page
         //rec.Email = "goliveiradacruz@unomaha.edu";
         //RecruiteeDto chu = svc.selectRecruiteeByEmail("sadallo@hotmail.com");
 
-        ServiceMobile svc = new ServiceMobile();
-        bool res = svc.insertRecruitee(Guid.NewGuid(), "", 0, "emailbgfbgfb@email.com", "", "", "M", "", "", "");
+        //ServiceMobile svc = new ServiceMobile();
+
+        //RecruiteeDto rec = svc.selectRecruiteeByEmail("email@email.com");
+        //bool res = svc.updateRecruitee(rec.RecruiteeId, "RAN01", 10, "email@email.com", "Gustavo", "Cruz", "M", "AGE01", null, null);
+        
+
 
     }
 
