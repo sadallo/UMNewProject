@@ -12,10 +12,24 @@ namespace UMNewElasticWebsite.Service.Plugin
         public List<JobDto> selectAllJob()
         {
             NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient();
-           
+
             try
             {
                 return svc.selectAllJob().ToList<JobDto>();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+        {
+            NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient();
+
+            try
+            {
+                return svc.selectJobByRecruiteeIdRecommendation(recruiteeId).ToList<JobDto>();
             }
             catch (Exception ex)
             {

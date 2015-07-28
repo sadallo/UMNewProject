@@ -37,6 +37,20 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
+        public List<RecommendedJob> selectRecommendedJobByRecruiteeId(RecommendedJob obj)
+        {
+            NewElasticBankContext db = new NewElasticBankContext();
+
+            try
+            {
+                return db.Database.SqlQuery(typeof(RecommendedJob), "dbo.SelectRecommendedJobByRecruiteeId @RecruiteeId='" + obj.RecruiteeId.ToString() + "'").Cast<RecommendedJob>().ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public Boolean insertRecommendedJob(RecommendedJob obj)
         {
             using (NewElasticBankContext db = new NewElasticBankContext())

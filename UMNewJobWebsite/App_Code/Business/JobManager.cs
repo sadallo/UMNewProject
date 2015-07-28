@@ -24,6 +24,19 @@ namespace UMNewJobWebsite.Business
             }
         }
 
+        public List<Job> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+        {
+            try
+            {
+                IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
+                return svc.selectJobByRecruiteeIdRecommendation(recruiteeId);
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
+
         public Job selectJobById(Job obj)
         {
             try

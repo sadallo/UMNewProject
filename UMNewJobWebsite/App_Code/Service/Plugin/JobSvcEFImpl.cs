@@ -37,6 +37,20 @@ namespace UMNewJobWebsite.Service.Plugin
             }
         }
 
+        public List<Job> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+        {
+            NewJobBankContext db = new NewJobBankContext();
+
+            try
+            {
+                return db.Database.SqlQuery(typeof(Job), "dbo.SelectJobByRecruiteeIdRecommendation @RecruiteeId='" + recruiteeId + "'").Cast<Job>().ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public Boolean insertJob(Job obj)
         {
             using (NewJobBankContext db = new NewJobBankContext())

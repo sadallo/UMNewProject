@@ -11,6 +11,7 @@ namespace UMNewElasticWebsite.Service.Interface
 	{
         List<RecommendedJob> selectAllRecommendedJob();
         RecommendedJob selectRecommendedJobByJobIdAndRecruiteeId(RecommendedJob obj);
+        List<RecommendedJob> selectRecommendedJobByRecruiteeId(RecommendedJob obj);
         Boolean insertRecommendedJob(RecommendedJob obj);
         Boolean updateRecommendedJob(RecommendedJob obj);
         Boolean deleteRecommendedJob(RecommendedJob obj);

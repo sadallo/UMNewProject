@@ -102,6 +102,22 @@ public class Service : IServiceWCF
         }
     }
 
+    public List<RecommendedJobDto> selectRecommendedJobByRecruiteeId(RecommendedJobDto dto)
+    {
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        RecommendedJob obj = new RecommendedJob();
+        obj.RecruiteeId = dto.RecruiteeId;
+        List<RecommendedJob> recJobList = mgr.selectRecommendedJobByRecruiteeId(obj);
+        List<RecommendedJobDto> dtoList = new List<RecommendedJobDto>();
+
+        foreach (RecommendedJob task in recJobList)
+        {
+            dtoList.Add(RecommendedJobDto.createRecommendedJobDTO(task));
+        }
+
+        return dtoList;
+    }
+
     public Boolean insertRecommendedJob(RecommendedJobDto dto)
     {
         RecommendedJob obj = RecommendedJob.createRecommendedJob(dto.JobId, dto.RecruiteeId, (decimal)dto.PredictedRankingValue);
@@ -200,6 +216,12 @@ public class Service : IServiceWCF
     {
         JobManager mgr = new JobManager();
         return mgr.selectAllJob();
+    }
+
+    public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+    {
+        JobManager mgr = new JobManager();
+        return mgr.selectJobByRecruiteeIdRecommendation(recruiteeId);
     }
 
     public JobDto selectJobById(JobDto dto)

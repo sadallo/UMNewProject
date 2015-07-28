@@ -101,6 +101,22 @@ public class ServiceMobile : IServiceMobile
         }
     }
 
+    public List<RecommendedJobDto> selectRecommendedJobByRecruiteeId(Guid RecruiteeId)
+    {
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        RecommendedJob obj = new RecommendedJob();
+        obj.RecruiteeId = RecruiteeId;
+        List<RecommendedJob> recJobList = mgr.selectRecommendedJobByRecruiteeId(obj);
+        List<RecommendedJobDto> dtoList = new List<RecommendedJobDto>();
+
+        foreach (RecommendedJob task in recJobList)
+        {
+            dtoList.Add(RecommendedJobDto.createRecommendedJobDTO(task));
+        }
+
+        return dtoList;
+    }
+
     public Boolean insertRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue)
     {
         RecommendedJob obj = RecommendedJob.createRecommendedJob(JobId, RecruiteeId, (decimal)PredictedRankingValue);
@@ -212,6 +228,12 @@ public class ServiceMobile : IServiceMobile
     {
         JobManager mgr = new JobManager();
         return mgr.selectAllJob();
+    }
+
+    public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+    {
+        JobManager mgr = new JobManager();
+        return mgr.selectJobByRecruiteeIdRecommendation(recruiteeId);
     }
 
     public JobDto selectJobById(Guid JobId)

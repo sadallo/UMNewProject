@@ -72,6 +72,9 @@ public interface IServiceWCF
     List<JobDto> selectAllJob();
 
     [OperationContract]
+    List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId);
+
+    [OperationContract]
     JobDto selectJobById(JobDto obj);
 
     [OperationContract]

@@ -18,37 +18,20 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        //NewRecruiteeService.ServiceWCFClient svc = new NewRecruiteeService.ServiceWCFClient();
-        //RecruiteeDto rec = new RecruiteeDto();
-        //rec.Email = "sadallo@hotmail.com";
-        //RecruiteeDto recemail = svc.selectRecruiteeByEmail(rec);
-        //bool blabla = svc.insertRecruitee(Guid.NewGuid(), "RAN01", 10, "goliveiradacruz@unomaha.edu", "Gustavo", "Cruz", "M", "AGE01", "EDU01", "INC01");
-        //ServiceMobile svc = new ServiceMobile();
-        //RecruiteeDto rec = new RecruiteeDto();
-        //rec.Email = "goliveiradacruz@unomaha.edu";
-        //RecruiteeDto chu = svc.selectRecruiteeByEmail("sadallo@hotmail.com");
-
-        //ServiceMobile svc = new ServiceMobile();
-
-        //RecruiteeDto rec = svc.selectRecruiteeByEmail("email@email.com");
-        //bool res = svc.updateRecruitee(rec.RecruiteeId, "RAN01", 10, "email@email.com", "Gustavo", "Cruz", "M", "AGE01", null, null);
-        
-
-
     }
 
- //public void updateRankingValues()
-    //{
-    //    IFileSystemSvc fileSvc = new FileSystemSvcImpl();
-    //    List<RecruiteeDto> recList = fileSvc.readRecruitees(Server.MapPath("~/") + "/files/IDandAVG.txt");
+    public void updateRankingValues()
+    {
+        IFileSystemSvc fileSvc = new FileSystemSvcImpl();
+        List<RecruiteeDto> recList = fileSvc.readRecruitees(Server.MapPath("~/") + "/files/IDandAVG.txt");
 
-    //    Service svc = new Service();
+        Service svc = new Service();
 
-    //    foreach (RecruiteeDto rec in recList)
-    //    {
-    //        RecruiteeDto recSelect = svc.selectRecruiteeById(rec);
-    //        recSelect.RankingValue = rec.RankingValue;
-    //        bool result = svc.updateRecruitee(recSelect);
-    //    }    
-    //}
+        foreach (RecruiteeDto rec in recList)
+        {
+            RecruiteeDto recSelect = svc.selectRecruiteeById(rec);
+            recSelect.RankingValue = rec.RankingValue;
+            bool result = svc.updateRecruitee(recSelect);
+        }
+    }
 }

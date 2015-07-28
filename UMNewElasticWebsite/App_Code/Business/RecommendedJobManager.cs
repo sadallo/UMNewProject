@@ -29,7 +29,20 @@ namespace UMNewElasticWebsite.Business
             try
             {
                 IRecommendedJobSvc svc = (IRecommendedJobSvc)this.getService(typeof(IRecommendedJobSvc).Name);
-               return svc.selectRecommendedJobByJobIdAndRecruiteeId(obj);
+                return svc.selectRecommendedJobByJobIdAndRecruiteeId(obj);
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
+
+        public List<RecommendedJob> selectRecommendedJobByRecruiteeId(RecommendedJob obj)
+        {
+            try
+            {
+                IRecommendedJobSvc svc = (IRecommendedJobSvc)this.getService(typeof(IRecommendedJobSvc).Name);
+                return svc.selectRecommendedJobByRecruiteeId(obj);
             }
             catch (ServiceLoadException ex)
             {

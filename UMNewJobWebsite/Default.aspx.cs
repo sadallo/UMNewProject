@@ -13,5 +13,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //ServiceMobile svc = new ServiceMobile();
+        //List<JobDto> list = svc.selectJobByRecruiteeIdRecommendation("40709433-B16C-4952-B662-08D28040C723");
     }
 }

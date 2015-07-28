@@ -10,6 +10,7 @@ namespace UMNewJobWebsite.Service.Interface
     {
         List<Job> selectAllJob();
         Job selectJobById(Job obj);
+        List<Job> selectJobByRecruiteeIdRecommendation(String recruiteeId);
         Boolean insertJob(Job obj);
         Boolean updateJob(Job obj);
         Boolean deleteJob(Job obj);

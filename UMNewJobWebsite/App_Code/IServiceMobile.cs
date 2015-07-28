@@ -73,6 +73,10 @@ public interface IServiceMobile
     List<JobDto> selectAllJob();
 
     [OperationContract]
+    List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId);
+
+
+    [OperationContract]
     JobDto selectJobById(System.Guid JobId);
 
     [OperationContract]

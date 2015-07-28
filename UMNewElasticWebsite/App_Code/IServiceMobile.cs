@@ -37,6 +37,9 @@ public interface IServiceMobile
     RecommendedJobDto selectRecommendedJobByJobIdAndRecruiteeId(Guid JobId, Guid RecruiteeId);
 
     [OperationContract]
+    List<RecommendedJobDto> selectRecommendedJobByRecruiteeId(Guid RecruiteeId);
+
+    [OperationContract]
     Boolean insertRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue);
 
     [OperationContract]
@@ -86,6 +89,9 @@ public interface IServiceMobile
     #region Job
     [OperationContract]
     List<JobDto> selectAllJob();
+
+    [OperationContract]
+    List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId);
 
     [OperationContract]
      JobDto selectJobById(Guid JobId);

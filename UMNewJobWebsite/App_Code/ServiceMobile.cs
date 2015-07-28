@@ -192,6 +192,20 @@ public class ServiceMobile : IServiceMobile
         return dtoList;
     }
 
+    public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+    {
+        JobManager mgr = new JobManager();
+        List<Job> jobList = mgr.selectJobByRecruiteeIdRecommendation(recruiteeId);
+        List<JobDto> dtoList = new List<JobDto>();
+
+        foreach (Job job in jobList)
+        {
+            dtoList.Add(JobDto.createJobDTO(job));
+        }
+
+        return dtoList;
+    }
+
     public JobDto selectJobById(System.Guid JobId)
     {
         JobManager mgr = new JobManager();
