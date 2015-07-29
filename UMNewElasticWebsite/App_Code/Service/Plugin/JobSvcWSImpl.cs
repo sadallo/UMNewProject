@@ -43,8 +43,7 @@ namespace UMNewElasticWebsite.Service.Plugin
 
             try
             {
-                return null;
-                //return svc.selectJobNotDoneByRecruiteeId(recruiteeId).ToList<JobDto>();
+                return svc.selectJobNotDoneByRecruiteeId(recruiteeId).ToList<JobDto>();
             }
             catch (Exception ex)
             {

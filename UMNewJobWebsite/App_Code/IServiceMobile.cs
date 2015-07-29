@@ -76,7 +76,7 @@ public interface IServiceMobile
     List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId);
 
     [OperationContract]
-    List<JobDto> selectJobIdNotDoneByRecruiteeId(String recruiteeId);
+    List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId);
 
     [OperationContract]
     JobDto selectJobById(System.Guid JobId);

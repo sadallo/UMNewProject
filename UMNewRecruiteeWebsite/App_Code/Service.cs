@@ -278,7 +278,6 @@ public class Service : IServiceWCF
         return mgr.removeSkillFromRecruitee(obj, SkillId);
     }
 
-    [OperationContract]
     public Guid[] selectRecruiteeNames()
     {
         RecruiteeManager mgr = new RecruiteeManager();
@@ -506,6 +505,15 @@ public class Service : IServiceWCF
         return mgr.deleteIncome(obj);
     }
 
+    #endregion
+
+    #region RecruiteeSkill
+
+    public List<RecruiteeSkillDto> selectAllRecruiteeSkill()
+    {
+        RecruiteeSkillManager mgr = new RecruiteeSkillManager();
+        return mgr.selectAllRecruiteeSkill();
+    }
     #endregion
 
 

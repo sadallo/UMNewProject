@@ -161,6 +161,14 @@ public interface IServiceWCF
 
     #endregion
 
+    #region RecruiteeSkill
+
+    [OperationContract]
+    List<RecruiteeSkillDto> selectAllRecruiteeSkill();
+
+    #endregion
+
+
 
 
 

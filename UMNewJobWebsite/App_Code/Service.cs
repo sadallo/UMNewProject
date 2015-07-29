@@ -206,10 +206,10 @@ public class Service : IServiceWCF
         return dtoList;
     }
 
-    public List<JobDto> selectJobIdNotDoneByRecruiteeId(String recruiteeId)
+    public List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId)
     {
         JobManager mgr = new JobManager();
-        List<Job> jobList = mgr.selectJobIdNotDoneByRecruiteeId(recruiteeId);
+        List<Job> jobList = mgr.selectJobNotDoneByRecruiteeId(recruiteeId);
         List<JobDto> dtoList = new List<JobDto>();
 
         foreach (Job job in jobList)
@@ -295,14 +295,12 @@ public class Service : IServiceWCF
         return dtoList;
     }
 
-    [OperationContract]
     public Guid[] selectExpressionNames()
     {
         JobManager mgr = new JobManager();
         return mgr.selectExpressionNames();
     }
 
-    [OperationContract]
     public double[] selectExpressionDifficulty()
     {
         JobManager mgr = new JobManager();

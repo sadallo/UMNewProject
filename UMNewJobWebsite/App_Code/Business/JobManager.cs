@@ -37,12 +37,12 @@ namespace UMNewJobWebsite.Business
             }
         }
 
-        public List<Job> selectJobIdNotDoneByRecruiteeId(String recruiteeId)
+        public List<Job> selectJobNotDoneByRecruiteeId(String recruiteeId)
         {
             try
             {
                 IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
-                return svc.selectJobIdNotDoneByRecruiteeId(recruiteeId);
+                return svc.selectJobNotDoneByRecruiteeId(recruiteeId);
             }
             catch (ServiceLoadException ex)
             {

@@ -165,5 +165,11 @@ public interface IServiceMobile
 
     #endregion
 
+    #region RecruiteeSkill
+
+    [OperationContract]
+    List<RecruiteeSkillDto> selectAllRecruiteeSkill();
+
+    #endregion
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="807034fd-8323-45cc-b959-80d4b823baa4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="96f0bafc-219a-4728-82cf-c567ff023b9d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,13 +22,14 @@
     <MetadataSource Address="http://umdbms.no-ip.info/umnewelasticwebsite/servicemobile.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceMobile.xsd" MetadataType="Schema" ID="91b302fe-d14e-450a-9b30-d425a8541cf8" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd3" />
-    <MetadataFile FileName="ServiceMobile1.xsd" MetadataType="Schema" ID="aa443a59-a375-4178-b760-1e6683766a66" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd4" />
-    <MetadataFile FileName="ServiceMobile2.xsd" MetadataType="Schema" ID="c99093cb-2ba3-4ae9-bf17-b1c1827f3d84" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd2" />
-    <MetadataFile FileName="ServiceMobile3.xsd" MetadataType="Schema" ID="aee46e8f-1c88-43f4-a1b7-39af7cfb78b2" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd1" />
-    <MetadataFile FileName="ServiceMobile.disco" MetadataType="Disco" ID="37a46442-dd4d-400e-a5ce-ba4948b9310e" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?disco" />
-    <MetadataFile FileName="ServiceMobile.wsdl" MetadataType="Wsdl" ID="49569353-f446-4122-9ba0-65b25b5bacc8" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?wsdl" />
-    <MetadataFile FileName="ServiceMobile4.xsd" MetadataType="Schema" ID="1f39df96-f03d-42d3-ae7a-bac1ab86b95a" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceMobile.xsd" MetadataType="Schema" ID="b38c4487-a23e-4cd0-ba2f-7e7efca0c773" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServiceMobile1.xsd" MetadataType="Schema" ID="db86c83c-3106-4ad3-9c90-20fe2b3eb3dc" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceMobile2.xsd" MetadataType="Schema" ID="069f1f33-fb76-4d8c-8671-d9459b0cb090" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceMobile3.xsd" MetadataType="Schema" ID="269655a9-9f36-4786-87ec-e3c0b981b9f2" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceMobile4.xsd" MetadataType="Schema" ID="35a02472-50e2-4377-8d31-126a041a4791" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceMobile.disco" MetadataType="Disco" ID="bcb2c573-7141-443b-b876-5cfc84211e39" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?disco" />
+    <MetadataFile FileName="ServiceMobile.wsdl" MetadataType="Wsdl" ID="a1775768-2a91-4ee6-8e24-5d7795c1fa45" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?wsdl" />
+    <MetadataFile FileName="ServiceMobile5.xsd" MetadataType="Schema" ID="e8fff2c4-510a-43d2-adda-fef7442ca94c" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -5,8 +5,9 @@
       <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UMNewElasticWebsite.DomainDTO" />
-      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" />
-      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" />
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" />
+      <xsd:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServiceMobile_selectAllTask_InputMessage">
@@ -39,6 +40,12 @@
   <wsdl:message name="IServiceMobile_deleteTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:deleteTaskResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRatings_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectRatings" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRatings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectRatingsResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMobile_selectAllRecommendedJob_InputMessage">
     <wsdl:part name="parameters" element="tns:selectAllRecommendedJob" />
   </wsdl:message>
@@ -50,6 +57,12 @@
   </wsdl:message>
   <wsdl:message name="IServiceMobile_selectRecommendedJobByJobIdAndRecruiteeId_OutputMessage">
     <wsdl:part name="parameters" element="tns:selectRecommendedJobByJobIdAndRecruiteeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecommendedJobByRecruiteeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecommendedJobByRecruiteeId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectRecommendedJobByRecruiteeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectRecommendedJobByRecruiteeIdResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceMobile_insertRecommendedJob_InputMessage">
     <wsdl:part name="parameters" element="tns:insertRecommendedJob" />
@@ -134,6 +147,18 @@
   </wsdl:message>
   <wsdl:message name="IServiceMobile_selectAllJob_OutputMessage">
     <wsdl:part name="parameters" element="tns:selectAllJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobNotDoneByRecruiteeIdRecommendation_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobNotDoneByRecruiteeIdRecommendation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobNotDoneByRecruiteeIdRecommendation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobNotDoneByRecruiteeIdRecommendationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobNotDoneByRecruiteeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobNotDoneByRecruiteeId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMobile_selectJobNotDoneByRecruiteeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobNotDoneByRecruiteeIdResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceMobile_selectJobById_InputMessage">
     <wsdl:part name="parameters" element="tns:selectJobById" />
@@ -300,6 +325,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/deleteTask" message="tns:IServiceMobile_deleteTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/deleteTaskResponse" message="tns:IServiceMobile_deleteTask_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="selectRatings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectRatings" message="tns:IServiceMobile_selectRatings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectRatingsResponse" message="tns:IServiceMobile_selectRatings_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="selectAllRecommendedJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRecommendedJob" message="tns:IServiceMobile_selectAllRecommendedJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllRecommendedJobResponse" message="tns:IServiceMobile_selectAllRecommendedJob_OutputMessage" />
@@ -307,6 +336,10 @@
     <wsdl:operation name="selectRecommendedJobByJobIdAndRecruiteeId">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectRecommendedJobByJobIdAndRecruiteeId" message="tns:IServiceMobile_selectRecommendedJobByJobIdAndRecruiteeId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectRecommendedJobByJobIdAndRecruiteeIdResponse" message="tns:IServiceMobile_selectRecommendedJobByJobIdAndRecruiteeId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectRecommendedJobByRecruiteeId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectRecommendedJobByRecruiteeId" message="tns:IServiceMobile_selectRecommendedJobByRecruiteeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectRecommendedJobByRecruiteeIdResponse" message="tns:IServiceMobile_selectRecommendedJobByRecruiteeId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="insertRecommendedJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/insertRecommendedJob" message="tns:IServiceMobile_insertRecommendedJob_InputMessage" />
@@ -363,6 +396,14 @@
     <wsdl:operation name="selectAllJob">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectAllJob" message="tns:IServiceMobile_selectAllJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectAllJobResponse" message="tns:IServiceMobile_selectAllJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectJobNotDoneByRecruiteeIdRecommendation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectJobNotDoneByRecruiteeIdRecommendation" message="tns:IServiceMobile_selectJobNotDoneByRecruiteeIdRecommendation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectJobNotDoneByRecruiteeIdRecommendationResponse" message="tns:IServiceMobile_selectJobNotDoneByRecruiteeIdRecommendation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectJobNotDoneByRecruiteeId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectJobNotDoneByRecruiteeId" message="tns:IServiceMobile_selectJobNotDoneByRecruiteeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMobile/selectJobNotDoneByRecruiteeIdResponse" message="tns:IServiceMobile_selectJobNotDoneByRecruiteeId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="selectJobById">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMobile/selectJobById" message="tns:IServiceMobile_selectJobById_InputMessage" />
@@ -508,6 +549,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="selectRatings">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectRatings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="selectAllRecommendedJob">
       <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllRecommendedJob" style="document" />
       <wsdl:input>
@@ -519,6 +569,15 @@
     </wsdl:operation>
     <wsdl:operation name="selectRecommendedJobByJobIdAndRecruiteeId">
       <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectRecommendedJobByJobIdAndRecruiteeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectRecommendedJobByRecruiteeId">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectRecommendedJobByRecruiteeId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -645,6 +704,24 @@
     </wsdl:operation>
     <wsdl:operation name="selectAllJob">
       <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectAllJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectJobNotDoneByRecruiteeIdRecommendation">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectJobNotDoneByRecruiteeIdRecommendation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectJobNotDoneByRecruiteeId">
+      <soap:operation soapAction="http://tempuri.org/IServiceMobile/selectJobNotDoneByRecruiteeId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

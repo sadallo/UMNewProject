@@ -21,6 +21,7 @@
     <MetadataSource Address="http://umdbms.no-ip.info/umnewjobwebsite/Service.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="d51202d5-5bfc-4351-871b-cab7fe0d0b19" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewJobWebsite/Service.svc?xsd=xsd3" />
     <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="59c9b973-b986-4490-8e2a-61c71b418272" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewJobWebsite/Service.svc?xsd=xsd2" />
     <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="8f1a9db4-55ef-463a-b0a0-acdc9dbe7757" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewJobWebsite/Service.svc?xsd=xsd1" />
     <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="e6804fca-952a-47ad-8d84-8bbbc11b1ee0" SourceId="1" SourceUrl="http://umdbms.no-ip.info/UMNewJobWebsite/Service.svc?xsd=xsd0" />

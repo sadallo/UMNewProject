@@ -74,13 +74,13 @@ namespace UMNewJobWebsite.Service.Plugin
             }
         }
 
-        public List<Job> selectJobIdNotDoneByRecruiteeId(String recruiteeId)
+        public List<Job> selectJobNotDoneByRecruiteeId(String recruiteeId)
         {
             NewJobBankContext db = new NewJobBankContext();
 
             try
             {
-                return db.Database.SqlQuery(typeof(Job), "dbo.SelectJobIdNotDoneByRecruiteeId @RecruiteeId='" + recruiteeId + "'").Cast<Job>().ToList();
+                return db.Database.SqlQuery(typeof(Job), "dbo.selectJobNotDoneByRecruiteeId @RecruiteeId='" + recruiteeId + "'").Cast<Job>().ToList();
             }
             catch (Exception ex)
             {

@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UMNewRecruiteeWebsite.DomainDTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UMNewJobWebsite.DomainDTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://umdbms.no-ip.info/UMNewElasticWebsite/ServiceMobile.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="ArrayOfRecruiteeDto">
+  <xs:complexType name="ArrayOfJobDto">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecruiteeDto" nillable="true" type="tns:RecruiteeDto" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobDto" nillable="true" type="tns:JobDto" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfRecruiteeDto" nillable="true" type="tns:ArrayOfRecruiteeDto" />
-  <xs:complexType name="RecruiteeDto">
+  <xs:element name="ArrayOfJobDto" nillable="true" type="tns:ArrayOfJobDto" />
+  <xs:complexType name="JobDto">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AgeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EducationId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IncomeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RankingId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RankingValue" type="xs:double" />
-      <xs:element minOccurs="0" name="RecruiteeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="CompensationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployerId" type="ser:guid" />
+      <xs:element minOccurs="0" name="JobCompensationValue" type="xs:double" />
+      <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobExperienceLevel" type="xs:double" />
+      <xs:element minOccurs="0" name="JobId" type="ser:guid" />
+      <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobQuota" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="RecruiteeDto" nillable="true" type="tns:RecruiteeDto" />
+  <xs:element name="JobDto" nillable="true" type="tns:JobDto" />
   <xs:complexType name="ArrayOfSkillDto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SkillDto" nillable="true" type="tns:SkillDto" />
@@ -36,56 +34,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SkillDto" nillable="true" type="tns:SkillDto" />
-  <xs:complexType name="ArrayOfRankingDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RankingDto" nillable="true" type="tns:RankingDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfRankingDto" nillable="true" type="tns:ArrayOfRankingDto" />
-  <xs:complexType name="RankingDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="RankingId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RankingName" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="RankingDto" nillable="true" type="tns:RankingDto" />
-  <xs:complexType name="ArrayOfAgeDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgeDto" nillable="true" type="tns:AgeDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAgeDto" nillable="true" type="tns:ArrayOfAgeDto" />
-  <xs:complexType name="AgeDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AgeDescription" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="AgeId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AgeDto" nillable="true" type="tns:AgeDto" />
-  <xs:complexType name="ArrayOfEducationDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="EducationDto" nillable="true" type="tns:EducationDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfEducationDto" nillable="true" type="tns:ArrayOfEducationDto" />
-  <xs:complexType name="EducationDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="EducationDescription" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EducationId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="EducationDto" nillable="true" type="tns:EducationDto" />
-  <xs:complexType name="ArrayOfIncomeDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="IncomeDto" nillable="true" type="tns:IncomeDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfIncomeDto" nillable="true" type="tns:ArrayOfIncomeDto" />
-  <xs:complexType name="IncomeDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="IncomeDescription" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IncomeId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="IncomeDto" nillable="true" type="tns:IncomeDto" />
 </xs:schema>

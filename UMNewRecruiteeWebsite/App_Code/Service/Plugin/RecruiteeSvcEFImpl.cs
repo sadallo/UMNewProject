@@ -16,6 +16,7 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
         {
             NewRecruiteeBankContext db = new NewRecruiteeBankContext();
             return ((from a in db.Recruitees
+                     orderby a.RecruiteeId
                      select a.RecruiteeId).ToArray());
         }
 
