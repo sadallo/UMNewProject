@@ -19,8 +19,8 @@ namespace UMNewElasticWebsite.Service.Plugin
                       { JobId = a.JobId, RecruiteeId = a.RecruiteeId, Rating = (double?)a.Rating }).ToArray<TaskRatingDTO>();
                       
         }
-
         public List<Task> selectAllTask()
+
         {
             NewElasticBankContext db = new NewElasticBankContext();
 

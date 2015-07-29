@@ -24,8 +24,8 @@ public partial class _Default : System.Web.UI.Page
         //bool result = svc.updateTask(task.TaskId, task.JobId, task.RecruiteeId, "bla bla", 44.5325);
 
         //List<JobDto> list = svc.selectJobNotDoneByRecruiteeIdRecommendation("40709433-B16C-4952-B662-08D28040C723");
-
-        TaskSvcEFImpl svc = new TaskSvcEFImpl();
+        Service svc = new Service();
+        
         TaskRatingDTO[] arr = svc.selectRatings();
     }
 

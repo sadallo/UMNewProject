@@ -27,6 +27,10 @@ public interface IServiceMobile
 
     [OperationContract]
     Boolean deleteTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription, double? Rating);
+
+    [OperationContract]
+    TaskRatingDTO[] selectRatings();
+   
     #endregion
 
     #region RecommendedJob
@@ -101,19 +105,19 @@ public interface IServiceMobile
 
     [OperationContract]
      Boolean insertJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                       String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                       String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
      Boolean updateJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                       String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                       String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
      Boolean deleteJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                       String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                       String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
      JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                       String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                       String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
     List<JobDto> selectJobBySkillId(String SkillId);

@@ -108,7 +108,7 @@ namespace UMNewElasticWebsite.Business
         }
 
         public JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue)
         {
             try
             {

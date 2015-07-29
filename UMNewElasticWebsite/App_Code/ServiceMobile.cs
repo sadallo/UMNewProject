@@ -66,6 +66,14 @@ public class ServiceMobile : IServiceMobile
         TaskManager mgr = new TaskManager();
         return mgr.deleteTask(obj);
     }
+
+    public TaskRatingDTO[] selectRatings()
+    {
+        TaskManager mgr = new TaskManager();
+
+        return mgr.selectRatings();
+    }
+
     #endregion
 
     #region RecommendedJob
@@ -275,7 +283,7 @@ public class ServiceMobile : IServiceMobile
     }
     
     public JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue)
     {
         JobManager mgr = new JobManager();
         return mgr.createJobDTO(JobId, JobName, CompensationId, EmployerId, JobDescription, JobQuota, JobExperienceLevel, JobCompensationValue);

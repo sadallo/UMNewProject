@@ -28,6 +28,10 @@ public interface IServiceWCF
 
     [OperationContract]
     Boolean deleteTask(TaskDto obj);
+
+    [OperationContract]
+    TaskRatingDTO[] selectRatings();
+    
  
     #endregion
 
@@ -112,7 +116,7 @@ public interface IServiceWCF
 
     [OperationContract]
     JobDto createJobDTO(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
     List<JobDto> selectJobBySkillId(String SkillId);

@@ -14,5 +14,6 @@ namespace UMNewElasticWebsite.Service.Interface
         Boolean insertTask(Task obj);
         Boolean updateTask(Task obj);
         Boolean deleteTask(Task obj);
+        TaskRatingDTO[] selectRatings();
 	}
 }

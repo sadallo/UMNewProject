@@ -77,5 +77,17 @@ namespace UMNewElasticWebsite.Business
                 return false;
             }
         }
+        public TaskRatingDTO[] selectRatings()
+        {
+            try
+            {
+                ITaskSvc svc = (ITaskSvc)this.getService(typeof(ITaskSvc).Name);
+                return svc.selectRatings();
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
     }
 }
