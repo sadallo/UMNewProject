@@ -4,11 +4,22 @@ using System.Linq;
 using System.Web;
 using UMNewElasticWebsite.Models;
 using UMNewElasticWebsite.Service.Interface;
+using UMNewElasticWebsite.DomainDTO;
 
 namespace UMNewElasticWebsite.Service.Plugin
 {
     public class TaskSvcEFImpl : ITaskSvc
     {
+
+        public TaskRatingDTO[] selectRatings()
+        {
+            NewElasticBankContext db = new NewElasticBankContext();
+            return (from a in db.Tasks
+                      select new TaskRatingDTO
+                      { JobId = a.JobId, RecruiteeId = a.RecruiteeId, Rating = (double?)a.Rating }).ToArray<TaskRatingDTO>();
+                      
+        }
+
         public List<Task> selectAllTask()
         {
             NewElasticBankContext db = new NewElasticBankContext();
