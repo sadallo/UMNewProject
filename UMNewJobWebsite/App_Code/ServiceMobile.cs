@@ -192,10 +192,24 @@ public class ServiceMobile : IServiceMobile
         return dtoList;
     }
 
-    public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+    public List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId)
     {
         JobManager mgr = new JobManager();
-        List<Job> jobList = mgr.selectJobByRecruiteeIdRecommendation(recruiteeId);
+        List<Job> jobList = mgr.selectJobNotDoneByRecruiteeIdRecommendation(recruiteeId);
+        List<JobDto> dtoList = new List<JobDto>();
+
+        foreach (Job job in jobList)
+        {
+            dtoList.Add(JobDto.createJobDTO(job));
+        }
+
+        return dtoList;
+    }
+
+    public List<JobDto> selectJobIdNotDoneByRecruiteeId(String recruiteeId)
+    {
+        JobManager mgr = new JobManager();
+        List<Job> jobList = mgr.selectJobIdNotDoneByRecruiteeId(recruiteeId);
         List<JobDto> dtoList = new List<JobDto>();
 
         foreach (Job job in jobList)

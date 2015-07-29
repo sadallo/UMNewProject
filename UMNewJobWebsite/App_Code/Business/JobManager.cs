@@ -24,12 +24,25 @@ namespace UMNewJobWebsite.Business
             }
         }
 
-        public List<Job> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+        public List<Job> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId)
         {
             try
             {
                 IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
-                return svc.selectJobByRecruiteeIdRecommendation(recruiteeId);
+                return svc.selectJobNotDoneByRecruiteeIdRecommendation(recruiteeId);
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
+
+        public List<Job> selectJobIdNotDoneByRecruiteeId(String recruiteeId)
+        {
+            try
+            {
+                IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
+                return svc.selectJobIdNotDoneByRecruiteeId(recruiteeId);
             }
             catch (ServiceLoadException ex)
             {
