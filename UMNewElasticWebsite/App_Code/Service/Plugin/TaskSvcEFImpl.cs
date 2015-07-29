@@ -70,6 +70,7 @@ namespace UMNewElasticWebsite.Service.Plugin
                         task.JobId = obj.JobId;
                         task.RecruiteeId = obj.RecruiteeId;
                         task.TaskDescription = obj.TaskDescription;
+                        task.Rating = obj.Rating;
 
                         #region Database Submission with Rollback
 

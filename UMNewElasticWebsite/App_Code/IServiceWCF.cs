@@ -93,7 +93,10 @@ public interface IServiceWCF
     List<JobDto> selectAllJob();
 
     [OperationContract]
-    List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId);
+    List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId);
+
+    [OperationContract]
+    List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId);
 
     [OperationContract]
     JobDto selectJobById(JobDto obj);

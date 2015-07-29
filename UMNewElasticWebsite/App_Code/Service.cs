@@ -49,21 +49,21 @@ public class Service : IServiceWCF
 
     public Boolean insertTask(TaskDto dto)
     {
-        Task obj = Task.createTask(dto.TaskId, dto.JobId, dto.RecruiteeId, dto.TaskDescription);
+        Task obj = Task.createTask(dto.TaskId, dto.JobId, dto.RecruiteeId, dto.TaskDescription, (decimal?)dto.Rating);
         TaskManager mgr = new TaskManager();
         return mgr.insertTask(obj);
     }
 
     public Boolean updateTask(TaskDto dto)
     {
-        Task obj = Task.createTask(dto.TaskId, dto.JobId, dto.RecruiteeId, dto.TaskDescription);
+        Task obj = Task.createTask(dto.TaskId, dto.JobId, dto.RecruiteeId, dto.TaskDescription, (decimal?)dto.Rating);
         TaskManager mgr = new TaskManager();
         return mgr.updateTask(obj);
     }
 
     public Boolean deleteTask(TaskDto dto)
     {
-        Task obj = Task.createTask(dto.TaskId, dto.JobId, dto.RecruiteeId, dto.TaskDescription);
+        Task obj = Task.createTask(dto.TaskId, dto.JobId, dto.RecruiteeId, dto.TaskDescription, (decimal?)dto.Rating);
         TaskManager mgr = new TaskManager();
         return mgr.deleteTask(obj);
     }
@@ -218,10 +218,16 @@ public class Service : IServiceWCF
         return mgr.selectAllJob();
     }
 
-    public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+    public List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId)
     {
         JobManager mgr = new JobManager();
-        return mgr.selectJobByRecruiteeIdRecommendation(recruiteeId);
+        return mgr.selectJobNotDoneByRecruiteeIdRecommendation(recruiteeId);
+    }
+
+    public List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId)
+    {
+        JobManager mgr = new JobManager();
+        return mgr.selectJobNotDoneByRecruiteeId(recruiteeId);
     }
 
     public JobDto selectJobById(JobDto dto)

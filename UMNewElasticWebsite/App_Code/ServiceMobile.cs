@@ -46,23 +46,23 @@ public class ServiceMobile : IServiceMobile
         }
     }
 
-    public Boolean insertTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription)
+    public Boolean insertTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription, double? Rating)
     {
-        Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription);
+        Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription, (decimal?)Rating);
         TaskManager mgr = new TaskManager();
         return mgr.insertTask(obj);
     }
 
-    public Boolean updateTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription)
+    public Boolean updateTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription, double? Rating)
     {
-        Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription);
+        Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription, (decimal?)Rating);
         TaskManager mgr = new TaskManager();
         return mgr.updateTask(obj);
     }
 
-    public Boolean deleteTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription)
+    public Boolean deleteTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription, double? Rating)
     {
-        Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription);
+        Task obj = Task.createTask(TaskId, JobId, RecruiteeId, TaskDescription, (decimal?)Rating);
         TaskManager mgr = new TaskManager();
         return mgr.deleteTask(obj);
     }
@@ -230,10 +230,16 @@ public class ServiceMobile : IServiceMobile
         return mgr.selectAllJob();
     }
 
-    public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+    public List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId)
     {
         JobManager mgr = new JobManager();
-        return mgr.selectJobByRecruiteeIdRecommendation(recruiteeId);
+        return mgr.selectJobNotDoneByRecruiteeIdRecommendation(recruiteeId);
+    }
+
+    public List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId)
+    {
+        JobManager mgr = new JobManager();
+        return mgr.selectJobNotDoneByRecruiteeId(recruiteeId);
     }
 
     public JobDto selectJobById(Guid JobId)

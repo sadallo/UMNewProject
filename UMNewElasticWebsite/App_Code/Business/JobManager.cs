@@ -25,12 +25,26 @@ namespace UMNewElasticWebsite.Business
             }
         }
 
-        public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+        public List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId)
         {
             try
             {
                 IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
-                List<JobDto> list = svc.selectJobByRecruiteeIdRecommendation(recruiteeId);
+                List<JobDto> list = svc.selectJobNotDoneByRecruiteeIdRecommendation(recruiteeId);
+                return list;
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
+
+        public List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId)
+        {
+            try
+            {
+                IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
+                List<JobDto> list = svc.selectJobNotDoneByRecruiteeId(recruiteeId);
                 return list;
             }
             catch (ServiceLoadException ex)

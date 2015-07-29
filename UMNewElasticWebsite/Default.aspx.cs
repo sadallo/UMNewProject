@@ -17,7 +17,13 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        ServiceMobile svc = new ServiceMobile();
+        //bool result = svc.insertTask(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), "test", 99.5);
 
+        //TaskDto task = svc.selectTaskById(new Guid("E610E19E-397F-4A20-AAB0-FB9BC067E364"));
+        //bool result = svc.updateTask(task.TaskId, task.JobId, task.RecruiteeId, "bla bla", 44.5325);
+
+        List<JobDto> list = svc.selectJobNotDoneByRecruiteeIdRecommendation("40709433-B16C-4952-B662-08D28040C723");
     }
 
     public void updateRankingValues()

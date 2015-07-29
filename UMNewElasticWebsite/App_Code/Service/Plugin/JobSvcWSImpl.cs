@@ -23,13 +23,28 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
         }
 
-        public List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId)
+        public List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId)
         {
             NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient();
 
             try
             {
-                return svc.selectJobByRecruiteeIdRecommendation(recruiteeId).ToList<JobDto>();
+                return svc.selectJobNotDoneByRecruiteeIdRecommendation(recruiteeId).ToList<JobDto>();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId)
+        {
+            NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient();
+
+            try
+            {
+                return null;
+                //return svc.selectJobNotDoneByRecruiteeId(recruiteeId).ToList<JobDto>();
             }
             catch (Exception ex)
             {

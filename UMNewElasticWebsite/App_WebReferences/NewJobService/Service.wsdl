@@ -103,11 +103,11 @@
   <wsdl:message name="IServiceWCF_selectAllJob_OutputMessage">
     <wsdl:part name="parameters" element="tns:selectAllJobResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceWCF_selectJobByRecruiteeIdRecommendation_InputMessage">
-    <wsdl:part name="parameters" element="tns:selectJobByRecruiteeIdRecommendation" />
+  <wsdl:message name="IServiceWCF_selectJobNotDoneByRecruiteeIdRecommendation_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobNotDoneByRecruiteeIdRecommendation" />
   </wsdl:message>
-  <wsdl:message name="IServiceWCF_selectJobByRecruiteeIdRecommendation_OutputMessage">
-    <wsdl:part name="parameters" element="tns:selectJobByRecruiteeIdRecommendationResponse" />
+  <wsdl:message name="IServiceWCF_selectJobNotDoneByRecruiteeIdRecommendation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectJobNotDoneByRecruiteeIdRecommendationResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceWCF_selectJobById_InputMessage">
     <wsdl:part name="parameters" element="tns:selectJobById" />
@@ -252,9 +252,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectAllJob" message="tns:IServiceWCF_selectAllJob_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectAllJobResponse" message="tns:IServiceWCF_selectAllJob_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="selectJobByRecruiteeIdRecommendation">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectJobByRecruiteeIdRecommendation" message="tns:IServiceWCF_selectJobByRecruiteeIdRecommendation_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectJobByRecruiteeIdRecommendationResponse" message="tns:IServiceWCF_selectJobByRecruiteeIdRecommendation_OutputMessage" />
+    <wsdl:operation name="selectJobNotDoneByRecruiteeIdRecommendation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectJobNotDoneByRecruiteeIdRecommendation" message="tns:IServiceWCF_selectJobNotDoneByRecruiteeIdRecommendation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCF/selectJobNotDoneByRecruiteeIdRecommendationResponse" message="tns:IServiceWCF_selectJobNotDoneByRecruiteeIdRecommendation_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="selectJobById">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCF/selectJobById" message="tns:IServiceWCF_selectJobById_InputMessage" />
@@ -455,8 +455,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="selectJobByRecruiteeIdRecommendation">
-      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectJobByRecruiteeIdRecommendation" style="document" />
+    <wsdl:operation name="selectJobNotDoneByRecruiteeIdRecommendation">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCF/selectJobNotDoneByRecruiteeIdRecommendation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

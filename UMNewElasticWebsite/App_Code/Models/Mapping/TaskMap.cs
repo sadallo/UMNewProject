@@ -20,6 +20,7 @@ namespace UMNewElasticWebsite.Models.Mapping
             this.Property(t => t.JobId).HasColumnName("JobId");
             this.Property(t => t.RecruiteeId).HasColumnName("RecruiteeId");
             this.Property(t => t.TaskDescription).HasColumnName("TaskDescription");
+            this.Property(t => t.Rating).HasColumnName("Rating");
         }
     }
 }

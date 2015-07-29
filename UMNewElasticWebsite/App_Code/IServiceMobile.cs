@@ -20,13 +20,13 @@ public interface IServiceMobile
     TaskDto selectTaskById(Guid TaskId);
 
     [OperationContract]
-    Boolean insertTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription);
+    Boolean insertTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription, double? Rating);
 
     [OperationContract]
-    Boolean updateTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription);
+    Boolean updateTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription, double? Rating);
 
     [OperationContract]
-    Boolean deleteTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription);
+    Boolean deleteTask(Guid TaskId, Guid JobId, Guid RecruiteeId, String TaskDescription, double? Rating);
     #endregion
 
     #region RecommendedJob
@@ -91,7 +91,10 @@ public interface IServiceMobile
     List<JobDto> selectAllJob();
 
     [OperationContract]
-    List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId);
+    List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId);
+
+    [OperationContract]
+    List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId);
 
     [OperationContract]
      JobDto selectJobById(Guid JobId);

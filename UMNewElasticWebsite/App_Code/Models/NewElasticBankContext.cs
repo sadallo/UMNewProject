@@ -28,6 +28,9 @@ namespace UMNewElasticWebsite.Models
 
             // Fixes Sql precision problem  TABLE: Recruitee COLUMN: RankingValue
             modelBuilder.Entity<RecommendedJob>().Property(x => x.PredictedRankingValue).HasPrecision(18, 14);
+
+            // Fixes Sql precision problem  TABLE: Task COLUMN: Rating
+            modelBuilder.Entity<Task>().Property(x => x.Rating).HasPrecision(18, 5);
         }
     }
 }

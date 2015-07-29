@@ -11,7 +11,8 @@ namespace UMNewElasticWebsite.Service.Interface
     {
         List<JobDto> selectAllJob();
         JobDto selectJobById(JobDto obj);
-        List<JobDto> selectJobByRecruiteeIdRecommendation(String recruiteeId);
+        List<JobDto> selectJobNotDoneByRecruiteeIdRecommendation(String recruiteeId);
+        List<JobDto> selectJobNotDoneByRecruiteeId(String recruiteeId);
         Boolean insertJob(JobDto obj);
         Boolean updateJob(JobDto obj);
         Boolean deleteJob(JobDto obj);
