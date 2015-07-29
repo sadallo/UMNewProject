@@ -17,6 +17,7 @@ namespace UMNewRecruiteeWebsite.Service.Interface
         Boolean deleteRecruitee(Recruitee obj);
         Boolean addSkillToRecruitee(Recruitee obj, String skillId);
         Boolean removeSkillFromRecruitee(Recruitee obj, String skillId);
+        Guid[] selectRecruiteeNames();
 
 
     }

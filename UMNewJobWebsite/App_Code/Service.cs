@@ -295,6 +295,21 @@ public class Service : IServiceWCF
         return dtoList;
     }
 
+    [OperationContract]
+    public Guid[] selectExpressionNames()
+    {
+        JobManager mgr = new JobManager();
+        return mgr.selectExpressionNames();
+    }
+
+    [OperationContract]
+    public double[] selectExpressionDifficulty()
+    {
+        JobManager mgr = new JobManager();
+        return mgr.selectExpressionDifficulty();
+
+    }
+
     #endregion
 
     #region Skill

@@ -88,6 +88,9 @@ public interface IServiceMobile
     [OperationContract]
     Boolean removeSkillFromRecruitee(Guid RecruiteeId, String SkillId);
 
+    [OperationContract]
+    Guid[] selectRecruiteeNames();
+
     #endregion
 
     #region Skill

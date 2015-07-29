@@ -104,6 +104,13 @@ public interface IServiceMobile
     
     [OperationContract]
     List<JobDto> selectJobBySkillId(String skillId);
+
+    [OperationContract]
+    Guid[] selectExpressionNames();
+
+    [OperationContract]
+    double[] selectExpressionDifficulty();
+
     #endregion
 
     #region Skill

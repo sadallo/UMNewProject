@@ -143,5 +143,31 @@ namespace UMNewJobWebsite.Business
                 return null;
             }
         }
+
+        public Guid[] selectExpressionNames()
+        {
+           try
+            {
+                IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
+                return svc.selectExpressionNames();
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }      
+        }
+
+        public double[] selectExpressionDifficulty()
+        {
+            try
+            {
+                IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
+                return svc.selectExpressionDifficulty();
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
     }
 }

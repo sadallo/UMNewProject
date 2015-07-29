@@ -12,6 +12,14 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
 {
     public class RecruiteeSvcEFImpl : IRecruiteeSvc
     {
+        public Guid[] selectRecruiteeNames()
+        {
+            NewRecruiteeBankContext db = new NewRecruiteeBankContext();
+            return ((from a in db.Recruitees
+                     select a.RecruiteeId).ToArray());
+        }
+
+
         public List<Recruitee> selectAllRecruitee()
         {
             NewRecruiteeBankContext db = new NewRecruiteeBankContext();

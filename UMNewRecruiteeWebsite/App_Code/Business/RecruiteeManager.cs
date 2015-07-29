@@ -129,5 +129,19 @@ namespace UMNewRecruiteeWebsite.Business
                 return false;
             }
         }
+
+        public Guid[] selectRecruiteeNames()
+        {
+            try
+            {
+                IRecruiteeSvc svc = (IRecruiteeSvc)this.getService(typeof(IRecruiteeSvc).Name);
+                return svc.selectRecruiteeNames();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
     }
 }

@@ -281,6 +281,12 @@ public class ServiceMobile : IServiceMobile
         return mgr.removeSkillFromRecruitee(obj, SkillId);
     }
 
+    [OperationContract]
+    public Guid[] selectRecruiteeNames()
+    {
+        RecruiteeManager mgr = new RecruiteeManager();
+        return mgr.selectRecruiteeNames();
+    }
     #endregion
 
     #region Skill

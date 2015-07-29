@@ -101,6 +101,13 @@ public interface IServiceWCF
 
     [OperationContract]
     List<JobDto> selectJobBySkillId(String skillId);
+
+    [OperationContract]
+    Guid[] selectExpressionNames();
+
+    [OperationContract]
+    double[] selectExpressionDifficulty();
+
     #endregion
 
     #region Skill
