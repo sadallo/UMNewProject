@@ -251,7 +251,7 @@ public class ServiceMobile : IServiceMobile
     }
 
     public Boolean insertJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue)
     {
         JobManager mgr = new JobManager();
         JobDto obj = mgr.createJobDTO(JobId, JobName, CompensationId, EmployerId, JobDescription, JobQuota, JobExperienceLevel, JobCompensationValue);
@@ -259,7 +259,7 @@ public class ServiceMobile : IServiceMobile
     }
 
     public Boolean updateJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue)
     {
         JobManager mgr = new JobManager();
         JobDto obj = mgr.createJobDTO(JobId, JobName, CompensationId, EmployerId, JobDescription, JobQuota, JobExperienceLevel, JobCompensationValue);
@@ -267,7 +267,7 @@ public class ServiceMobile : IServiceMobile
     }
 
     public Boolean deleteJob(Guid JobId, String JobName, String CompensationId, Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue)
     {
         JobManager mgr = new JobManager();
         JobDto obj = mgr.createJobDTO(JobId, JobName, CompensationId, EmployerId, JobDescription, JobQuota, JobExperienceLevel, JobCompensationValue);

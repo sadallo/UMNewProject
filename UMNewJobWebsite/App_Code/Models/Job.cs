@@ -17,7 +17,7 @@ namespace UMNewJobWebsite.Models
         public System.Guid EmployerId { get; set; }
         public string JobDescription { get; set; }
         public int JobQuota { get; set; }
-        public string JobExperienceLevel { get; set; }
+        public decimal JobExperienceLevel { get; set; }
         public decimal JobCompensationValue { get; set; }
         public virtual Compensation Compensation { get; set; }
         public virtual Employer Employer { get; set; }
@@ -25,7 +25,7 @@ namespace UMNewJobWebsite.Models
 	    public virtual ICollection<Skill> Skills { get; set; }
 
         public static Job createJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId, 
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, decimal JobExperienceLevel, decimal JobCompensationValue)
         {
             Job obj = new Job();
             obj.JobId = JobId;

@@ -83,18 +83,18 @@ public interface IServiceMobile
 
     [OperationContract]
     Boolean insertJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
     Boolean updateJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
     Boolean deleteJob(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
     [OperationContract]
     JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
-                       String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue);
+                       String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue);
 
     [OperationContract]
     Boolean addSkillToJob(System.Guid JobId, String SkillId);

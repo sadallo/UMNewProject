@@ -238,27 +238,27 @@ public class Service : IServiceWCF
 
     public Boolean insertJob(JobDto dto)
     {
-        Job obj = Job.createJob(dto.JobId, dto.JobName, dto.CompensationId, dto.EmployerId, dto.JobDescription, dto.JobQuota, dto.JobExperienceLevel, dto.JobCompensationValue);
+        Job obj = Job.createJob(dto.JobId, dto.JobName, dto.CompensationId, dto.EmployerId, dto.JobDescription, dto.JobQuota, (decimal)dto.JobExperienceLevel, (decimal)dto.JobCompensationValue);
         JobManager mgr = new JobManager();
         return mgr.insertJob(obj);
     }
 
     public Boolean updateJob(JobDto dto)
     {
-        Job obj = Job.createJob(dto.JobId, dto.JobName, dto.CompensationId, dto.EmployerId, dto.JobDescription, dto.JobQuota, dto.JobExperienceLevel, dto.JobCompensationValue);
+        Job obj = Job.createJob(dto.JobId, dto.JobName, dto.CompensationId, dto.EmployerId, dto.JobDescription, dto.JobQuota, (decimal)dto.JobExperienceLevel, (decimal)dto.JobCompensationValue);
         JobManager mgr = new JobManager();
         return mgr.updateJob(obj);
     }
 
     public Boolean deleteJob(JobDto dto)
     {
-        Job obj = Job.createJob(dto.JobId, dto.JobName, dto.CompensationId, dto.EmployerId, dto.JobDescription, dto.JobQuota, dto.JobExperienceLevel, dto.JobCompensationValue);
+        Job obj = Job.createJob(dto.JobId, dto.JobName, dto.CompensationId, dto.EmployerId, dto.JobDescription, dto.JobQuota, (decimal)dto.JobExperienceLevel, (decimal)dto.JobCompensationValue);
         JobManager mgr = new JobManager();
         return mgr.deleteJob(obj);
     }
 
     public JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue)
     {
         return JobDto.createJobDTO(JobId, JobName, CompensationId, EmployerId, JobDescription, JobQuota, JobExperienceLevel, JobCompensationValue);
     }

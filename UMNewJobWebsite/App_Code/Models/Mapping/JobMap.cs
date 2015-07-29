@@ -23,9 +23,6 @@ namespace UMNewJobWebsite.Models.Mapping
             this.Property(t => t.JobDescription)
                 .HasMaxLength(100);
 
-            this.Property(t => t.JobExperienceLevel)
-                .IsRequired()
-                .HasMaxLength(20);
 
             // Table & Column Mappings
             this.ToTable("Job");

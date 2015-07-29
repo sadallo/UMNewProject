@@ -9,6 +9,29 @@ namespace UMNewJobWebsite.Service.Plugin
 {
     public class JobSvcEFImpl : IJobSvc
     {
+        public Guid[] selectExpressionNames()
+        {
+            NewJobBankContext db = new NewJobBankContext();
+            return ((from a in db.Jobs
+                     select a.JobId).ToArray());
+        }
+
+        public double[] selectExpressionDifficulty()
+        {
+            NewJobBankContext db = new NewJobBankContext();
+            decimal[] res = ((from a in db.Jobs
+                     select a.JobExperienceLevel).ToArray());
+
+            double[] arr = new double[res.Length];
+            for(int i=0; i<res.Length; i++)
+            {
+                arr[i] = (double)res[i];
+            }
+
+            return arr;
+        }
+
+   
         public List<Job> selectAllJob()
         {
             NewJobBankContext db = new NewJobBankContext();
@@ -43,7 +66,7 @@ namespace UMNewJobWebsite.Service.Plugin
 
             try
             {
-                return db.Database.SqlQuery(typeof(Job), "dbo.SelectJobByRecruiteeIdRecommendation @RecruiteeId='" + recruiteeId + "'").Cast<Job>().ToList();
+                return db.Database.SqlQuery(typeof(Job), "dbo.SelectJobNotDoneByRecruiteeIdRecommendation @RecruiteeId='" + recruiteeId + "'").Cast<Job>().ToList();
             }
             catch (Exception ex)
             {

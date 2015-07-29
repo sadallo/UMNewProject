@@ -27,10 +27,10 @@ namespace UMNewJobWebsite.DomainDTO
         public int JobQuota { get; set; }
 
         [DataMember]
-        public string JobExperienceLevel { get; set; }
+        public double JobExperienceLevel { get; set; }
 
         [DataMember]
-        public decimal JobCompensationValue { get; set; }
+        public double JobCompensationValue { get; set; }
 
         public static JobDto createJobDTO(Job obj)
         {
@@ -41,13 +41,13 @@ namespace UMNewJobWebsite.DomainDTO
             job.EmployerId = obj.EmployerId;
             job.JobDescription = obj.JobDescription;
             job.JobQuota = obj.JobQuota;
-            job.JobExperienceLevel = obj.JobExperienceLevel;
-            job.JobCompensationValue = obj.JobCompensationValue;
+            job.JobExperienceLevel = (double)obj.JobExperienceLevel;
+            job.JobCompensationValue = (double)obj.JobCompensationValue;
             return job;
         }
 
         public static JobDto createJobDTO(System.Guid JobId, String JobName, String CompensationId, System.Guid EmployerId,
-                                    String JobDescription, int JobQuota, String JobExperienceLevel, decimal JobCompensationValue)
+                                    String JobDescription, int JobQuota, double JobExperienceLevel, double JobCompensationValue)
         {
             JobDto job = new JobDto();
             job.JobId = JobId;

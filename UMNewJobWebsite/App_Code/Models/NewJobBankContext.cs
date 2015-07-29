@@ -31,6 +31,12 @@ namespace UMNewJobWebsite.Models
             modelBuilder.Configurations.Add(new JobMap());
             modelBuilder.Configurations.Add(new SkillMap());
             modelBuilder.Configurations.Add(new sysdiagramMap());
+
+            // Fixes Sql precision problem  TABLE: Job COLUMN: JobCompensationValue
+            modelBuilder.Entity<Job>().Property(x => x.JobCompensationValue).HasPrecision(18, 2);
+
+            // Fixes Sql precision problem  TABLE: Job COLUMN: JobExperienceLevel
+            modelBuilder.Entity<Job>().Property(x => x.JobExperienceLevel).HasPrecision(5, 3);
         }
     }
 }

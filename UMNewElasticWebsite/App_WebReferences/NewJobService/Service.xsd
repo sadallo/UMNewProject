@@ -52,9 +52,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CompensationId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EmployerId" type="ser:guid" />
-      <xs:element minOccurs="0" name="JobCompensationValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="JobCompensationValue" type="xs:double" />
       <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="JobExperienceLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobExperienceLevel" type="xs:double" />
       <xs:element minOccurs="0" name="JobId" type="ser:guid" />
       <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="JobQuota" type="xs:int" />
