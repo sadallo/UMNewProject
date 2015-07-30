@@ -17,8 +17,6 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //ServiceMobile svc = new ServiceMobile();
-        //List<JobDto> list = svc.selectJobNotDoneByRecruiteeId("3DD57FF0-ECCD-4E15-9FC8-74FB6AC412DA");
     }
 
 

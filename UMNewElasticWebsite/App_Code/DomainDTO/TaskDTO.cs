@@ -32,7 +32,7 @@ namespace UMNewElasticWebsite.DomainDTO
             task.JobId = obj.JobId;
             task.RecruiteeId = obj.RecruiteeId;
             task.TaskDescription = obj.TaskDescription;
-            task.Rating = (double)obj.Rating;
+            task.Rating = (double?)obj.Rating;
             return task;
         }
 

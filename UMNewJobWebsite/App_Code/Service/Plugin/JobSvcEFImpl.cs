@@ -13,6 +13,7 @@ namespace UMNewJobWebsite.Service.Plugin
         {
             NewJobBankContext db = new NewJobBankContext();
             return ((from a in db.Jobs
+                     orderby a.JobDescription
                      select a.JobId).ToArray());
         }
 
@@ -20,7 +21,8 @@ namespace UMNewJobWebsite.Service.Plugin
         {
             NewJobBankContext db = new NewJobBankContext();
             decimal[] res = ((from a in db.Jobs
-                     select a.JobExperienceLevel).ToArray());
+                              orderby a.JobDescription
+                              select a.JobExperienceLevel).ToArray());
 
             double[] arr = new double[res.Length];
             for(int i=0; i<res.Length; i++)
