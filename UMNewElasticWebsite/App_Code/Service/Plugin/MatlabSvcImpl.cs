@@ -9,7 +9,7 @@ namespace UMNewElasticWebsite.Service.Plugin
 {
     public class MatlabSvcImpl : IMatlabSvc
     {
-        public MLApp.MLApp matlab {get;set;}
+        public MLApp.MLApp matlab { get; set; }
 
         //Create the MATLAB instance (reference)
         public MatlabSvcImpl()

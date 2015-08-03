@@ -78,6 +78,9 @@ namespace UMNewElasticWebsite.Business
                 double total_similarity_avg_system = 0;
                 double total_inaccuracy_system = 0;
 
+                MatlabManager matlabMgr = new MatlabManager();
+
+                task.num_users_init = 3;
                 while (user_number <= task.num_users_init)
                 {
                     double[,] my_ratings = new double[task.num_jobs_init, 1];
@@ -106,7 +109,7 @@ namespace UMNewElasticWebsite.Business
 
                 //    ////Creating a MatLab reference to execute the recommended job script
                 //    ////IMatlabSvc matSvc = new MatlabSvcImpl();
-                    MatlabManager matlabMgr = new MatlabManager();
+                    
                     object[] res = matlabMgr.executeFilter(task, job_list, path_fix + "files", my_ratings, new_Y, R, new_X);
 
 
@@ -125,37 +128,37 @@ namespace UMNewElasticWebsite.Business
                 //    ////adding the list at the Dictionary for each user
 
                 //    ////ID and AVGs file
-                //    writeText.WriteLine(users_profile[user_number - 1].UserID + "\t" + avgs.Rating_total_avg);
+                    writeText.WriteLine(users_profile[user_number - 1].UserID + "\t" + avgs.Rating_total_avg);
 
 
-                //    users_calculated_raitings[user_number - 1] = avgs.Rating_total_avg;
+                    users_calculated_raitings[user_number - 1] = avgs.Rating_total_avg;
 
                 //    ////writing in the difficulty file
-                //    fileSystemManager.writeDifficultyToFile(writeTextDiff, avgs);
+                    fileSystemManager.writeDifficultyToFile(writeTextDiff, avgs);
 
 
                 //    ////used to insert recommended jobs for a user in the database
-                //    elasticMgr.insertRecommenderJob(avgs);
+                    //elasticMgr.insertRecommenderJob(avgs);
 
 
-                //    user_number++;
+                    user_number++;
 
                 }
 
-                //total_rating_avg_system /= task.num_users_init;
-                //total_similarity_avg_system /= task.num_users_init;
-                //total_inaccuracy_system /= task.num_users_init;
-                //////writing some more global information
-                //fileSystemManager.writeGlobalAveragesInformation(total_rating_avg_system, total_similarity_avg_system, total_inaccuracy_system,
-                //    task, writeTextAverages, users_profile, users_calculated_raitings);
+                total_rating_avg_system /= task.num_users_init;
+                total_similarity_avg_system /= task.num_users_init;
+                total_inaccuracy_system /= task.num_users_init;
+                ////writing some more global information
+                fileSystemManager.writeGlobalAveragesInformation(total_rating_avg_system, total_similarity_avg_system, total_inaccuracy_system,
+                    task, writeTextAverages, users_profile, users_calculated_raitings);
 
 
-                //////closing the three files
+                //////closing the four files
 
-                //writeText.Close();
-                //writeTextResult.Close();
-                //writeTextAverages.Close();
-                //writeTextDiff.Close();
+                writeText.Close();
+                writeTextResult.Close();
+                writeTextAverages.Close();
+                writeTextDiff.Close();
 
 
                 
