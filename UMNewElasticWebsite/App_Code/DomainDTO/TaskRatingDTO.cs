@@ -6,18 +6,22 @@ using System.Web;
 /// <summary>
 /// Summary description for TaskRatingDTO
 /// </summary>
-public class TaskRatingDTO
+
+namespace UMNewElasticWebsite.DomainDTO
 {
-	public TaskRatingDTO()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
+    public class TaskRatingDTO
+    {
+        public TaskRatingDTO()
+        {
+            //
+            // TODO: Add constructor logic here
+            //
+        }
 
-    public Guid JobId { get; set; }
+        public Guid JobId { get; set; }
 
-    public Guid RecruiteeId{ get; set; }
+        public Guid RecruiteeId { get; set; }
 
-    public double? Rating{ get; set; }
+        public double? Rating { get; set; }
+    }
 }

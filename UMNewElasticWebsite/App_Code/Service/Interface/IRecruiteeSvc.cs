@@ -20,6 +20,9 @@ namespace UMNewElasticWebsite.Service.Interface
         List<RecruiteeDto> selectRecruiteeBySkillId(String SkillId);
         Boolean addSkillToRecruitee(RecruiteeDto obj, String SkillId);
         Boolean removeSkillFromRecruitee(RecruiteeDto obj, String skillId);
+        String[] selectRecruiteeNames();
+        double[] selectRecruiteeSkills();
+
 
 
     }

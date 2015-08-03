@@ -14,10 +14,10 @@ namespace UMNewElasticWebsite.Service.Plugin
         public TaskRatingDTO[] selectRatings()
         {
             NewElasticBankContext db = new NewElasticBankContext();
-            return (from a in db.Tasks
+            TaskRatingDTO[] temp = (from a in db.Tasks
                       select new TaskRatingDTO
                       { JobId = a.JobId, RecruiteeId = a.RecruiteeId, Rating = (double?)a.Rating }).ToArray<TaskRatingDTO>();
-                      
+            return temp;              
         }
         public List<Task> selectAllTask()
 

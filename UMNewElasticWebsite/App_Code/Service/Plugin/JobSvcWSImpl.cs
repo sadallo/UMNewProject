@@ -181,5 +181,20 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
 
         }
+
+        //jobs ids (used in expressions file)
+        public string[] selectExpressionNames()
+        {
+            NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient();
+            Guid[] jobNames = svc.selectExpressionNames();
+            return Array.ConvertAll(jobNames, x => x.ToString());
+        }
+
+        //job difficulty (used in X)
+        public double[] selectExpressionDifficulty()
+        {
+            NewJobService.ServiceWCFClient svc = new NewJobService.ServiceWCFClient();
+            return svc.selectExpressionDifficulty();
+        }
     }
 }

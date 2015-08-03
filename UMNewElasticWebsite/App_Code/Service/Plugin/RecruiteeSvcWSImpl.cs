@@ -169,5 +169,43 @@ namespace UMNewElasticWebsite.Service.Plugin
             }
 
         }
+
+        //user profile (just the first information of the user profile)
+        public String[] selectRecruiteeNames()
+        {
+            NewRecruiteeService.ServiceWCFClient svc = new NewRecruiteeService.ServiceWCFClient();
+            Guid[] recNames = svc.selectRecruiteeNames();
+            return Array.ConvertAll(recNames, x => x.ToString());
+        }
+
+        //user self ratings
+        public double[] selectRecruiteeSkills()
+        {
+            NewRecruiteeService.ServiceWCFClient svc = new NewRecruiteeService.ServiceWCFClient();
+            NewRecruiteeService.RecruiteeSkillDto[] recSkills = svc.selectAllRecruiteeSkill();
+            double[] result = new double[recSkills.Length];
+            for (int n = 0; n < recSkills.Length; n++)
+            {
+                switch (recSkills[n].SkillId)
+                {
+                    case "SKI01":
+                        result[n] = 1;
+                        break;
+                    case "SKI02":
+                        result[n] = 2;
+                        break;
+                    case "SKI03":
+                        result[n] = 3;
+                        break;
+                    case "SKI04":
+                        result[n] = 4;
+                        break;
+                    case "SKI05":
+                        result[n] = 5;
+                        break;
+                }
+            }
+            return result;
+        }
     }
 }

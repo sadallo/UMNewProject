@@ -160,6 +160,34 @@ namespace UMNewElasticWebsite.Business
                 return false;
             }
         }
+
+        public string[] selectExpressionNames()
+        {
+            try
+            {
+                IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
+                return svc.selectExpressionNames();
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+        }
+
+        public double[] selectExpressionDifficulty()
+        {
+            try
+            {
+                IJobSvc svc = (IJobSvc)this.getService(typeof(IJobSvc).Name);
+                return svc.selectExpressionDifficulty();
+            }
+            catch (ServiceLoadException ex)
+            {
+                return null;
+            }
+            
+        }
+
     }
        
 }

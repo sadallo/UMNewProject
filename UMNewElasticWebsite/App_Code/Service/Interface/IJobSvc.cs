@@ -21,6 +21,8 @@ namespace UMNewElasticWebsite.Service.Interface
         List<JobDto> selectJobBySkillId(String SkillId);
         Boolean addSkillToJob(JobDto obj, String skillId);
         Boolean removeSkillFromJob(JobDto obj, String skillId);
+        string[] selectExpressionNames();
+        double[] selectExpressionDifficulty();
 
     }
 }
