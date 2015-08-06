@@ -144,5 +144,21 @@ namespace UMNewElasticWebsite.Service.Plugin
                 }
             }
         }
+
+        public Boolean deleteAllRecommendedJob()
+        {
+            using (NewElasticBankContext db = new NewElasticBankContext())
+            {
+                try
+                {
+                    db.Database.ExecuteSqlCommand("dbo.DeleteAllRecommendedJob");
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

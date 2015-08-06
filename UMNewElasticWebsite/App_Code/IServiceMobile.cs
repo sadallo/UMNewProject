@@ -51,6 +51,9 @@ public interface IServiceMobile
 
     [OperationContract]
     Boolean deleteRecommendedJob(Guid JobId, Guid RecruiteeId, double PredictedRankingValue);
+
+    [OperationContract]
+    Boolean deleteAllRecommendedJob();
     #endregion
 
     #region Recruitee

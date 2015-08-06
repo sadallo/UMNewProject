@@ -12,13 +12,13 @@ using UMNewElasticWebsite.DomainDTO;
 using NewRecruiteeService;
 using NewJobService;
 using System.IO;
+using System.Threading;
 
 public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DriverWebManager driverWebManager = new DriverWebManager();
-        bool result = driverWebManager.ExecuteMainRoutine();
+        
     }
 
 
@@ -26,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
     public void updateRankingValues()
     {
         IFileSystemSvc fileSvc = new FileSystemSvcImpl();
-        List<RecruiteeDto> recList = fileSvc.readRecruitees(Server.MapPath("~/") + "/files/IDandAVG.txt");
+        List<RecruiteeDto> recList = fileSvc.readRecruitees(Server.MapPath("~/") + "/result_files/IDandAVG.txt");
 
         Service svc = new Service();
 

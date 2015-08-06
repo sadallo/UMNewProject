@@ -53,6 +53,9 @@ public interface IServiceWCF
 
     [OperationContract]
     Boolean deleteRecommendedJob(RecommendedJobDto obj);
+
+    [OperationContract]
+    Boolean deleteAllRecommendedJob();
     #endregion
 
     #region Recruitee

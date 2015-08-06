@@ -145,6 +145,12 @@ public class ServiceMobile : IServiceMobile
         RecommendedJobManager mgr = new RecommendedJobManager();
         return mgr.deleteRecommendedJob(obj);
     }
+
+    public Boolean deleteAllRecommendedJob()
+    {
+        RecommendedJobManager mgr = new RecommendedJobManager();
+        return mgr.deleteAllRecommendedJob();
+    }
     #endregion
 
     #region Recruitee

@@ -57,7 +57,7 @@ namespace UMNewElasticWebsite.Service.Plugin
         {
             try
             {
-                return new StreamWriter(path_fix + "results.txt");
+                return new StreamWriter(path_fix + "result_files/results.txt");
             }
             catch (Exception ex)
             {
@@ -75,7 +75,7 @@ namespace UMNewElasticWebsite.Service.Plugin
         {
             try
             {
-                return new StreamWriter(path_fix + "averages.txt");
+                return new StreamWriter(path_fix + "result_files/averages.txt");
             }
             catch (Exception ex)
             {
@@ -93,7 +93,7 @@ namespace UMNewElasticWebsite.Service.Plugin
         {
             try
             {
-                return new StreamWriter(path_fix + "IDandAVG.txt");
+                return new StreamWriter(path_fix + "result_files/IDandAVG.txt");
             }
             catch (Exception ex)
             {
@@ -112,7 +112,7 @@ namespace UMNewElasticWebsite.Service.Plugin
         {
             try
             {
-                return new StreamWriter(path_fix + "difficulty.txt");
+                return new StreamWriter(path_fix + "result_files/difficulty.txt");
             }
             catch (Exception ex)
             {

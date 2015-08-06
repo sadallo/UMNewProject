@@ -15,5 +15,6 @@ namespace UMNewElasticWebsite.Service.Interface
         Boolean insertRecommendedJob(RecommendedJob obj);
         Boolean updateRecommendedJob(RecommendedJob obj);
         Boolean deleteRecommendedJob(RecommendedJob obj);
+        Boolean deleteAllRecommendedJob();
 	}
 }

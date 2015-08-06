@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+ 	<EditTextPreference 
+        android:key="email_preference"
+        android:title="@string/title_email"
+        android:summary="@string/default_email"
+        android:dialogTitle="@string/dialog_title_email"
+        />
+ 	
+ 	<ListPreference
+        android:key="skill_preference"
+        android:summary="@string/default_skill"
+        android:title="@string/title_skill"
+     	/>
+ 	
+ 	
+    <EditTextPreference 
+        android:key="firstname_preference"
+        android:title="@string/title_firstname"
+        android:summary="@string/default_firstname"
+        android:dialogTitle="@string/dialog_title_firstname"
+        />
+    
+    <EditTextPreference 
+        android:key="lastname_preference"
+        android:title="@string/title_lastname"
+        android:summary="@string/default_lastname"
+        android:dialogTitle="@string/dialog_title_lastname"
+        />
+    
+
+    <ListPreference
+            android:key="gender_preference"
+            android:entries="@array/gender_array"
+            android:summary="@string/default_gender"
+            android:entryValues="@array/gender_values_array"
+            android:title="@string/title_gender" 
+            android:defaultValue="@string/default_value_gender"
+     	/>
+    
+     <ListPreference
+            android:key="age_preference"
+            android:summary="@string/default_age"
+            android:title="@string/title_age"
+     	/>
+   
+     <ListPreference
+            android:key="education_preference"
+            android:summary="@string/default_education"
+            android:title="@string/title_education"
+    	 />
+     
+     
+     <ListPreference
+            android:key="income_preference"
+            android:summary="@string/default_income"
+            android:title="@string/title_income"
+     	/>
+    
+    
+</PreferenceScreen>

@@ -16,7 +16,7 @@ namespace UMNewElasticWebsite.Business
             try
             {
                 
-                StreamWriter write_job_list = new StreamWriter(path_fix+"NEW_espression.txt");
+                StreamWriter write_job_list = new StreamWriter(path_fix+"NEW_expression.txt");
                 StreamWriter write_new_X = new StreamWriter(path_fix + "NEW_X.txt");
                 StreamWriter write_users_profile = new StreamWriter(path_fix + "NEW_user_table.txt");
                 StreamWriter write_Y = new StreamWriter(path_fix + "NEW_Y.txt");

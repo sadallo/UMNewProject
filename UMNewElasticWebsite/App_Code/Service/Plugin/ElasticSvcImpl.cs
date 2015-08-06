@@ -16,18 +16,24 @@ namespace UMNewElasticWebsite.Service.Plugin
     {
         public bool insertRecommenderJob(DataResult avgs)
         {
-            bool flag = false;
-            RecommendedJobManager mgr = new RecommendedJobManager();
-            for (int n=0; n < avgs.Number_top_jobs; n++)
+            try
             {
-                RecommendedJob job = new RecommendedJob();
-                job.RecruiteeId = new Guid(avgs.User_profile.UserID);
-                job.JobId = new Guid(avgs.TopJobNames[n]);
-                job.PredictedRankingValue = (decimal)avgs.Mylist.ElementAt(n).PredRecJob;
-                flag = mgr.insertRecommendedJob(job);
-                
+                bool flag = false;
+                RecommendedJobManager mgr = new RecommendedJobManager();
+                for (int n = 0; n < avgs.Number_top_jobs; n++)
+                {
+                    RecommendedJob job = new RecommendedJob();
+                    job.RecruiteeId = new Guid(avgs.User_profile.UserID);
+                    job.JobId = new Guid(avgs.TopJobNames[n]);
+                    job.PredictedRankingValue = (decimal)avgs.Mylist.ElementAt(n).PredRecJob;
+                    flag = mgr.insertRecommendedJob(job);                    
+                }
+                return flag;
             }
-            return flag;
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         //To fill Y
@@ -35,7 +41,6 @@ namespace UMNewElasticWebsite.Service.Plugin
         {
             try
             {
-                //ElasticService.ServiceWCFClient svc = new ElasticService.ServiceWCFClient();
                 TaskManager mgr = new TaskManager();
                 List<Task> tasks = mgr.selectAllTask();
                 foreach (Task task in tasks)

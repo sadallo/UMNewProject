@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Threading;
 
 namespace UMNewElasticWebsite.Business
 {
@@ -17,8 +18,14 @@ namespace UMNewElasticWebsite.Business
         {
             try
             {
-                ////JOBS LIST and X is working but the order is different
-                ////jobMgrJobSvcImpl j = new JobSvcImpl();
+                RecommendedJobManager recJobMgr = new RecommendedJobManager();
+                new Thread(() =>
+                {
+                    Thread.CurrentThread.IsBackground = true;
+                    bool result_delete = recJobMgr.deleteAllRecommendedJob();
+                }).Start();
+
+
                 JobManager jobMgr = new JobManager();
                 String[] job_list = jobMgr.selectExpressionNames(); //job_names
                 double[] X = jobMgr.selectExpressionDifficulty(); //X
@@ -46,8 +53,8 @@ namespace UMNewElasticWebsite.Business
 
 
                 ///////////// WRITING VARIABLES IN FILE ////////////
-                FromWebToFileManager file = new FromWebToFileManager();
-                file.writeFiles(job_list, new_X, users_profile, Y);
+                //FromWebToFileManager file = new FromWebToFileManager();
+                //file.writeFiles(job_list, new_X, users_profile, Y);
 
 
 
@@ -62,15 +69,14 @@ namespace UMNewElasticWebsite.Business
                 int user_number = 1;
 
                 //////Load File System Service
-                //////IFileSystemSvc svc = new FileSystemSvcImpl();
-                FileSystemManager fileSystemManager = new FileSystemManager();
+                FileSystemManager fileSystemMgr = new FileSystemManager();
 
                 //////Creating a variable to write in a File the job recommendations and comparisons
                 //////Load File Writer
-                StreamWriter writeTextResult = fileSystemManager.getResultStreamWriter();
-                StreamWriter writeTextAverages = fileSystemManager.getAverageStreamWriter();
-                StreamWriter writeText = fileSystemManager.getIdandAvgStreamWriter();
-                StreamWriter writeTextDiff = fileSystemManager.getDifficultyStreamWriter();
+                StreamWriter writeTextResult = fileSystemMgr.getResultStreamWriter();
+                StreamWriter writeTextAverages = fileSystemMgr.getAverageStreamWriter();
+                StreamWriter writeText = fileSystemMgr.getIdandAvgStreamWriter();
+                StreamWriter writeTextDiff = fileSystemMgr.getDifficultyStreamWriter();
 
                 double[] users_calculated_raitings = new double[task.num_users_init];
 
@@ -80,7 +86,6 @@ namespace UMNewElasticWebsite.Business
 
                 MatlabManager matlabMgr = new MatlabManager();
 
-                task.num_users_init = 3;
                 while (user_number <= task.num_users_init)
                 {
                     double[,] my_ratings = new double[task.num_jobs_init, 1];
@@ -105,22 +110,18 @@ namespace UMNewElasticWebsite.Business
                                 my_ratings[i, 0] = Y[i, n];
                         }
                     }
-
-
-                //    ////Creating a MatLab reference to execute the recommended job script
-                //    ////IMatlabSvc matSvc = new MatlabSvcImpl();
                     
                     object[] res = matlabMgr.executeFilter(task, job_list, path_fix + "files", my_ratings, new_Y, R, new_X);
 
 
                 //    ////Each time creates a  to be used to write the recommended jobs in a file
-                    List<TopJobData> mylist = fileSystemManager.writeValuesToFile(writeTextResult, res, job_list, user_number, new_X);
+                    List<TopJobData> mylist = fileSystemMgr.writeValuesToFile(writeTextResult, res, job_list, user_number, new_X);
 
 
                 //    ////Calculate Averages for Jobs for a User
                     DataResult avgs = new DataResult(mylist, mylist.Count, users_profile[user_number - 1]);
                     avgs.AverageForEachJob();
-                    fileSystemManager.writeAveragesToFile(avgs, writeTextAverages, users_profile[user_number - 1]);
+                    fileSystemMgr.writeAveragesToFile(avgs, writeTextAverages, users_profile[user_number - 1]);
 
                     total_rating_avg_system += avgs.Rating_total_avg;
                     total_similarity_avg_system += avgs.Percentage_total_avg;
@@ -134,13 +135,16 @@ namespace UMNewElasticWebsite.Business
                     users_calculated_raitings[user_number - 1] = avgs.Rating_total_avg;
 
                 //    ////writing in the difficulty file
-                    fileSystemManager.writeDifficultyToFile(writeTextDiff, avgs);
+                    fileSystemMgr.writeDifficultyToFile(writeTextDiff, avgs);
 
-
-                //    ////used to insert recommended jobs for a user in the database
-                    //elasticMgr.insertRecommenderJob(avgs);
-
-
+                    new Thread(() =>
+                        {
+                            Thread.CurrentThread.IsBackground = true;
+                            ////used to insert recommended jobs for a user in the database
+                            bool result = elasticMgr.insertRecommenderJob(avgs);
+                        }).Start();
+                
+                    
                     user_number++;
 
                 }
@@ -149,7 +153,7 @@ namespace UMNewElasticWebsite.Business
                 total_similarity_avg_system /= task.num_users_init;
                 total_inaccuracy_system /= task.num_users_init;
                 ////writing some more global information
-                fileSystemManager.writeGlobalAveragesInformation(total_rating_avg_system, total_similarity_avg_system, total_inaccuracy_system,
+                fileSystemMgr.writeGlobalAveragesInformation(total_rating_avg_system, total_similarity_avg_system, total_inaccuracy_system,
                     task, writeTextAverages, users_profile, users_calculated_raitings);
 
 
@@ -159,22 +163,6 @@ namespace UMNewElasticWebsite.Business
                 writeTextResult.Close();
                 writeTextAverages.Close();
                 writeTextDiff.Close();
-
-
-                
-                ////// Used to insert rating for task performed by workers. (User interface need to be built)
-                ////// 
-                //////double[,] full_Y = svc.readFullY(Directory.GetCurrentDirectory() + "/files/Y.txt", task);
-                //////IElasticSvc e = new ElasticSvcImpl();
-                //////e.InsertRatings(job_list, users_profile, full_Y);
-                
-
-
-
-                //////Console.WriteLine("DONE");
-
-                //////Wait until fisnih
-                //////Console.ReadLine();
 
                 return true;
             }

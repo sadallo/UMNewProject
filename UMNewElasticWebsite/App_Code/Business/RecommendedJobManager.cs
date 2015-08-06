@@ -90,5 +90,18 @@ namespace UMNewElasticWebsite.Business
                 return false;
             }
         }
+
+        public Boolean deleteAllRecommendedJob()
+        {
+            try
+            {
+                IRecommendedJobSvc svc = (IRecommendedJobSvc)this.getService(typeof(IRecommendedJobSvc).Name);
+                return svc.deleteAllRecommendedJob();
+            }
+            catch (ServiceLoadException ex)
+            {
+                return false;
+            }
+        }
     }
 }

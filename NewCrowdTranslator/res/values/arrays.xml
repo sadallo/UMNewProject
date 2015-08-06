@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender_array">
+        <item name="U">Unknown</item>
+        <item name="M">Male</item>
+        <item name="F">Female</item>
+    </string-array>
+    <string-array name="gender_values_array">
+        <item name="U">U</item>
+        <item name="M">M</item>
+        <item name="F">F</item>
+    </string-array>
+    
+    <string-array name="education_array">
+        <item name=""></item>      
+    </string-array>
+        
+    <string-array name="education_values_array">
+    	<item name=""></item>      
+    </string-array>
+    
+    <string-array name="income_array">
+        <item name=""></item>      
+    </string-array>
+    
+    <string-array name="income_values_array">
+    	<item name=""></item>      
+    </string-array>
+    
+    <string-array name="level_array">
+        <item name=""></item>      
+    </string-array>
+    
+    <string-array name="level_values_array">
+    	<item name=""></item>      
+    </string-array>
+    
+    <string-array name="education_array2">
+        <item name=""></item>      
+    </string-array>
+        
+    <string-array name="education_values_array2">
+    	<item name=""></item>      
+    </string-array>
+    
+    
+    
+    
+</resources>
