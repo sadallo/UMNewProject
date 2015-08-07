@@ -15,9 +15,29 @@ namespace UMNewRecruiteeWebsite.Service.Plugin
         public Guid[] selectRecruiteeNames()
         {
             NewRecruiteeBankContext db = new NewRecruiteeBankContext();
-            return ((from a in db.Recruitees
-                     orderby a.RecruiteeId
-                     select a.RecruiteeId).ToArray());
+            
+            try
+            {
+                //return ((from a in db.Recruitees
+                //         orderby a.RecruiteeId
+                //         select a.RecruiteeId).ToArray());
+
+                // Select Recruitee Ids using any query on SelectRecruiteeSpecial stored procedure
+                //List<Recruitee> list_recruitees = db.Database.SqlQuery(typeof(Recruitee), "dbo.SelectRecruiteeSpecial").Cast<Recruitee>().ToList();
+                //List<Guid> list_id = new List<Guid>();
+                //foreach (Recruitee rec in list_recruitees)
+                //{
+                //    list_id.Add(rec.RecruiteeId);
+                //}
+                //return list_id.ToArray();
+                List<Guid> list_id = db.Database.SqlQuery(typeof(Guid), "dbo.SelectRecruiteeSpecial").Cast<Guid>().ToList();
+                return list_id.ToArray();
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
 

@@ -7,6 +7,7 @@ using System.Text;
 using UMNewElasticWebsite.DomainDTO;
 using NewRecruiteeService;
 using NewJobService;
+using UMNewElasticWebsite.Domain;
 
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService" in both code and config file together.
 [ServiceContract]
@@ -204,6 +205,7 @@ public interface IServiceWCF
 
     #endregion
 
+  
 
 
 

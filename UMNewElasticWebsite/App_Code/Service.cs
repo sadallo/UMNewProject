@@ -10,6 +10,7 @@ using UMNewElasticWebsite.Models;
 using System.ServiceModel.Activation;
 using NewRecruiteeService;
 using NewJobService;
+using UMNewElasticWebsite.Domain;
 
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service" in code, svc and config file together.
 [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
@@ -71,7 +72,7 @@ public class Service : IServiceWCF
     public TaskRatingDTO[] selectRatings()
     {
         TaskManager mgr = new TaskManager();
-        
+
         return mgr.selectRatings();
     }
     #endregion
@@ -418,6 +419,8 @@ public class Service : IServiceWCF
     }
 
     #endregion
+
+   
 
 
 
