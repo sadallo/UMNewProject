@@ -4,7 +4,5 @@
 -->
 <VisualWebDeveloper>
 
-  <comReferences>
-    <reference Name="interop.mlapp" ID="{C36E46AB-6A81-457B-9F91-A7719A06287F}\1.0\0"/>
-  </comReferences>
+  <comReferences/>
 </VisualWebDeveloper>
